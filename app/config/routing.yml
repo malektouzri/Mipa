@@ -1,3 +1,18 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+ajout_gms:
+    path:   /ajoutGMS
+    defaults:   {   _controller: AppBundle:GMS:ajoutGMS    }
+afficheall_gms:
+    path:   /afficheAllGMS
+    defaults:   {   _controller: AppBundle:GMS:afficheAllGMS    }
+affiche_gms:
+    path:   /afficheGMS/{id}
+    defaults:   {   _controller: AppBundle:GMS:afficheGMS    }
+modifier_gms:
+    path:   /modifierGMS/{id}
+    defaults:   {   _controller: AppBundle:GMS:modifierGMS    }
+supprimer_gms:
+    path:   /supprimerGMS/{id}
+    defaults:   {   _controller: AppBundle:GMS:supprimerGMS    }

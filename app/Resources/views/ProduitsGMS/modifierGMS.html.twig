@@ -1,0 +1,25 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<form method="post" enctype="multipart/form-data">
+<input type="text" name="libelle" value="{{ gms.libelle }}">
+<input type="text" name="description" value="{{ gms.description }}">
+    {{ form_widget(form.filename, { 'id': 'imgInp' }) }}
+<img id="blah" src={{ asset('uploads/images/' ~ gms.filename) }} alt="yourimage" width="100" height="100" />
+<input type="submit" name="valider">
+</form>
+<script type="application/javascript">
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#blah').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+
+    $("#imgInp").change(function() {
+        readURL(this);
+    });
+</script>
