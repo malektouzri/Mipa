@@ -1,0 +1,89 @@
+{% extends 'baseMenuCHR.html.twig' %}
+{% block title %}
+    Nos services - MIPA
+{% endblock %}
+{% block stylesheet %}
+    {% endblock %}
+
+        {% block menu %}
+            <div class="wrapper">
+		<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="{{ path('home_page') }}" itemprop="url">
+				<span itemprop="title">Accueil</span>
+			</a>
+            <svg class="icon-chevron">
+                <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron') }}"></use>
+            </svg>
+		</span>
+                <span>
+			Nos Services	</span>
+
+
+            </div>
+        {% endblock %}
+
+
+    {% block barre %}
+        <div class="page-top" style="background-image: url({{ asset('uploads/images/nos-services.jpg') }})">
+
+
+            <!-- <div class="title-1">Collaboration</div> -->
+            <h1 class="title-1">
+                Nos Services	</h1>
+        </div>
+    {% endblock %}
+
+
+        {% block body %}
+            <div class="page-content">
+                <div class="wrapper">
+                    <div class="page-intro">
+                    </div>
+                </div>
+
+                <div class="text">
+                    <section class="cms-section cms-section--1">
+                        <div class="wrapper">
+                            <div class="cms-details">
+                                <h2 class="title-exception-1">
+                                    <small>MIPA</small>
+                                    Vous offre des équipements pour vos produits
+                                    <span class="asterisme-2"></span>
+                                </h2>
+
+                                <div class="cms-content">
+                                    Dans les années 50, Georges Hubert, boulanger de métier, a l’idée de faciliter l’approvisionnement des professionnels de la Boulangerie Pâtisserie et crée une société de distribution d’ingrédients et de matières premières : beurre, œufs et fromage. Transmise à son fils, Bernard, dans les années 70, celui-ci assure sa pérennité. Créatif et bien dans son époque, il profite des évolutions techniques et sociétales pour lancer une marque de produits surgelés, semi-finis et finis : c’est ainsi que naît Coup de pates® en 1990.				</div>
+
+                                <div class="cms-action">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="text">
+                    <section class="cms-section cms-section--2">
+                        <div class="wrapper">
+                            <div class="cms-visual">
+                                <img width="540" height="370" alt="" title="" src="{{ asset('template/coup-de-pates/Documents/coup-de-pates/content/image-thumb__5913__CDP_scaleByWidth_540/histoire.jpg') }}" srcset="/coup-de-pates/Documents/coup-de-pates/content/image-thumb__5913__CDP_scaleByWidth_540/histoire.jpeg 1x, /coup-de-pates/Documents/coup-de-pates/content/image-thumb__5913__CDP_scaleByWidth_540/histoire@2x.jpeg 2x" />			</div>
+
+                            <div class="cms-details">
+
+                                <div class="cms-content">
+                                    La marque française est si vite intégrée dans le paysage professionnel des métiers de bouche, <strong>que Coup de pates® est surnommée ‘l’ami des artisans’</strong>, notamment pour la <strong>haute valeur de ses produits</strong>. On sait donc d’où vient <strong>la qualité de la relation de Coup de pates® avec ses clients</strong> !<br />
+                                    <br />
+                                    Société́ familiale qui a su s’affirmer par son esprit inventif et son audace, la société alors quinquagénaire intègre le <a href="https://www.aryztafoodsolutions.fr/notre-societe" target="_blank">Groupe ARYZTA</a> en 2004. Conscient de la véritable pépite que représente Coup de pates®, ARYZTA soutient le positionnement de la marque. Coup de pates® poursuit son développement par la distribution de produits finis et semi-finis de haute qualité.				</div>
+
+                                <div class="cms-action">
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+            </div>
+        {% endblock %}
+        {% block produit %}
+        {% endblock %}
+
+
+

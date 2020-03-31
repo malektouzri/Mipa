@@ -1,3 +1,315 @@
-{{ gms.libelle }}
-{{ gms.description }}
-<img src={{ asset('uploads/images/' ~ gms.filename) }} width="100" height="100">
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#" xmlns="http://www.w3.org/1999/html">
+
+<!-- Mirrored from www.coupdepates.fr/produit/baguette-solene-a-bouts-pointus-18463 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:20:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>{{ gms.libelle }}</title><meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="{{ asset('template/bundles/cdp/images/logo_fino.png') }}" rel="icon" />
+    <link href="{{ asset('template/cache-buster-1570113083/bundles/cdp/css/styles.min.css') }}" media="" rel="stylesheet" type="text/css" /><script defer="defer" src="{{ asset('template/cache-buster-1556112614/bundles/senzocore/js/lib/polyfills/polyfills.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1561972607/bundles/senzocore/js/lib/polyfills/extensions.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/svgxuse.min.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/css-variables.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1556548469/bundles/cdp/js/libs/swiper.min.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1564649394/bundles/cdp/js/modules/beautified-select.js') }}"></script>
+    <script>
+        //<!--
+        Object.defineProperty(window, "recaptcha_key_public", { value: "6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH" });    //-->
+    </script>
+    <script defer="defer" src="../../www.google.com/recaptcha/api9881.js?render=6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH"></script>
+    <script defer="defer" src="../../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cd59a0995080cc2"></script><script defer src="../bundles/cdp/js/compiled/model/Geo.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16084831-1"></script>
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+
+        gtag('config', 'UA-16084831-1', {"anonymize_ip":true});
+
+    </script>
+</head>
+<body id="senzo_production">
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+<header class="header">
+    <div class="header-top">
+        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="../bundles/cdp/images/sprite.svg#icon-change"></use></svg></a>	</div>
+
+    <div class="header-bottom">
+        <a href="{{ path('home_page') }}" class="logo">
+            <img src="{{ asset('template/bundles/cdp/images/logo_fino.png') }}" width="150" height="30" alt="Logo FINO">
+        </a>
+
+        <!-- Hamburger menu -->
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <!-- End Hamburger menu -->
+
+        <ul class="menu">
+            <li>
+                <a href="#" title="Histoire & Vision">Votre partenaire</a>
+                <button class="toggle-accordion">
+                    <svg class="icon-chevron">
+                        <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron')}}"></use>
+                    </svg>
+                </button>
+
+                <ul class="submenu">
+
+                    <li>
+                        <a href="{{ path('a_propos') }}" title="Histoire & Vision">Histoire &amp; Vision</a>		</li>
+
+            </li>
+                </ul>
+            <li>
+                <a href="{{ path('afficheall_gms') }}" title="Nos produits">Nos produits</a>
+            </li>
+            <li>
+                <a href="{{ path('service_gms') }}" title="Nos services">Nos services</a>
+            </li>
+
+            <li>
+                <a href="{{ path('contact') }}" title="Contact">Contact</a>
+            </li>
+            {% if user != null %}
+            <li>
+                <li>
+                    <a href="{{ path('profile_gms') }}" title="Profile">Profile</a>
+                    <button class="toggle-accordion">
+                        <svg class="icon-chevron">
+                        </svg>
+                    </button>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="{{ path('get_panier_gms') }}" title="Panier">Mon Panier</a>	</li>
+                        <li>
+                            <a href="{{ path('affiche_cmd_gms') }}" title="Commande">Mes Commandes</a>	</li>
+
+                    </ul>
+                </li>
+                <li >
+                    <a href="{{ path('logout') }}" title="déconnexion">Déconnexion</a>
+                </li>
+            {% endif %}
+        </ul>
+        <ul class="menu-pictos">
+            <li class="phone" data-content-popin-trigger="call-modal">
+                <svg class="icons">
+                    <use xlink:href="bundles/cdp/images/sprite.svg#icon-tel"></use>
+                </svg>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/lib/ReCaptcha.js')}}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/tool/debounce_event.js')}}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js')}}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Recipe.js')}}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/search.js')}}"></script>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine_modal.js') }}"></script>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/selection.js') }}"></script>
+
+<script>
+    "use strict";
+    {
+        const key = "gdpr-agreement-expires";
+        const container = document.getElementById("gdpr-info-bar");
+
+        if (+localStorage.getItem(key) < Date.now())
+        {
+            container.classList.add("is-visible");
+            container.querySelector("button").addEventListener(
+                "click",
+                function ()
+                {
+                    container.classList.remove("is-visible");
+                    const now = new Date();
+                    const expires = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate(), 0, 0, 0, 0);
+                    localStorage.setItem(key, expires.getTime());
+                }
+            );
+        }
+    }
+</script>
+
+<main class="main page-single page-single-recipe">
+
+    <a href="{{ path('afficheall_gms') }}" class="single-recipe-back">
+        <svg class="icon-chevron">
+            <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron') }}"></use>
+        </svg>
+        Retour aux produits
+    </a>
+
+    <div class="single-print-img">
+    </div>
+
+    <div class="single-visual">
+        <div class="sticky-tools">
+            <button class="sticky-item sticky-item--fav card-fav">
+                {% if user != null %}
+                <a href="{{ path('add_panier_gms', {'id':gms.id}) }}"/>
+                {% else %}
+                <a href="{{ path('login') }}"/>
+                {% endif %}
+                <svg class="icon-panier">
+                    <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-panier') }}"></use>
+                </svg>
+            </button>
+
+            <button class="sticky-item sticky-item--fav card-fav" onclick="window.print();">
+                <svg class="icon-panier">
+                    <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-impression') }}"></use>
+                </svg>
+            </button>
+
+            <div class="fb-share-button"
+                 data-href="https://developers.facebook.com/docs/plugins/"
+                 data-layout="button_count">
+            </div>
+            <div class="addthis is-hidden addthis_inline_share_toolbox"></div>
+
+            <script>
+                "use strict";
+                document.getElementById("toggle_addThis").addEventListener(
+                    "click",
+                    function (event)
+                    {
+                        event.preventDefault();
+                        event.target.closest(".sticky-tools").querySelector(".addthis").classList.toggle("is-hidden");
+                    }
+                );
+            </script>
+        </div>
+
+        <div class="single-visual-slider">
+            <div class="single-visual-container">
+
+                <div class="single-visual-slider-pagination swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="single-visual-nav">
+            <img alt="" src="{{ asset('uploads/images/' ~ gms.filename) }}" width="500" height="300" style="margin-bottom: 500px;margin-top: 100px" />
+        </div>
+    </div>
+
+    <div class="single-content single-product">
+        <div class="single-product-ref">
+
+            {{ gms.libelle }}<br />
+            <strong>Réf. {{ gms.reference }}</strong>
+        </div>
+
+        <div class="single-section" id="section-1" data-section-title="Description">
+
+            <h1 class="title-exception-2">
+                <small></small>
+                {{ gms.libelle }}
+                <span class="asterisme-2"></span>
+            </h1>
+
+            <p>
+                <br />
+                Prix: <strong>{{ gms.prix }} DT</strong>
+                <br/>
+                {% if promo != null %}
+                Prix Promo: <strong>{{ gms.prix - ((promo.pourcentage * gms.prix)/100) }} DT</strong>
+                {% endif %}
+            </p>
+
+            <ul class="product-types">
+                <li>
+                    <div class="tag" data-tooltip-content="Précuit surgelé" style="background-color: #f5be4d"></div> Précuit surgelé</li>
+            </ul>
+
+            <div class="single-accordion">
+                <h2 class="title-2 single-accordion-trigger">
+                    <strong>Étapes de remise en oeuvre</strong>
+                    <span class="asterisme-2"></span>
+                </h2>
+
+                <div class="single-accordion-content">
+                    <ul class="product-steps">
+
+
+
+
+                        <li>
+                            <div class="tag" data-tooltip-content="Décongélation"><svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" width="9.97mm" height="9.97mm" viewBox="0 0 28.26 28.26"><title>Decongelation2</title><path  style="fill:#3a2050"/><path  style="fill:#3a2050"/><path  style="fill:#3a2050"/><path  style="fill:#3a2050"/><path  style="fill:#3a2050"/><path  style="fill:#3a2050"/><path  style="fill:#3a2050"/><path style="fill:#fff"/></svg></div>Décongélation <strong>20m-30m</strong> à <strong>0-4°C</strong>
+                        </li>
+
+
+
+
+                        <li>
+                            <div class="tag" data-tooltip-content="Passage au four"><svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" width="9.96mm" height="9.96mm" viewBox="0 0 28.24 28.24"><title>PasserFour2</title><path d="M28.32,14.29A14.12,14.12,0,1,1,14.2.17,14.12,14.12,0,0,1,28.32,14.29Z" transform="translate(-0.08 -0.17)" style="fill:#bfbfbf"/><rect x="5.51" y="6.06" width="17.22" height="16.12" style="fill:#fff"/><path d="M23.11,22.65H5.29V5.93H23.11Zm-17.22-.6H22.51V6.53H5.89Z" transform="translate(-0.08 -0.17)" style="fill:#3a2050"/><path d="M10.92,9.81a1.13,1.13,0,0,1,0-2.26,1.13,1.13,0,1,1,0,2.26Zm0-1.64a.51.51,0,1,0,.51.51A.51.51,0,0,0,10.92,8.17Z" transform="translate(-0.08 -0.17)" style="fill:#bfbfbf"/><path d="M8.39,9.81A1.13,1.13,0,1,1,9.53,8.68,1.14,1.14,0,0,1,8.39,9.81Zm0-1.64a.51.51,0,1,0,.51.51A.51.51,0,0,0,8.39,8.17Z" transform="translate(-0.08 -0.17)" style="fill:#bfbfbf"/><path d="M13.45,9.81a1.13,1.13,0,1,1,1.13-1.13A1.14,1.14,0,0,1,13.45,9.81Zm0-1.64a.51.51,0,0,0,0,1,.51.51,0,1,0,0-1Z" transform="translate(-0.08 -0.17)" style="fill:#bfbfbf"/><rect x="7.25" y="10.16" width="13.87" height="0.37" style="fill:#3a2050"/><path d="M21.1,18a2.2,2.2,0,0,1-2,2.37H9.42a2.2,2.2,0,0,1-2-2.37V14.6a2.21,2.21,0,0,1,2-2.38h9.69a2.21,2.21,0,0,1,2,2.38Z" transform="translate(-0.08 -0.17)" style="fill:#fff"/><path d="M19.11,20.76H9.42A2.55,2.55,0,0,1,7.09,18V14.6a2.56,2.56,0,0,1,2.33-2.73h9.69a2.56,2.56,0,0,1,2.34,2.73V18A2.55,2.55,0,0,1,19.11,20.76Zm-9.69-8.2a1.88,1.88,0,0,0-1.65,2V18a1.87,1.87,0,0,0,1.65,2h9.69a1.87,1.87,0,0,0,1.65-2V14.6a1.88,1.88,0,0,0-1.65-2Z" transform="translate(-0.08 -0.17)" style="fill:#3a2050"/><rect x="7.08" y="14.31" width="13.87" height="0.37" style="fill:#3a2050"/><rect x="7.08" y="17.44" width="13.87" height="0.37" style="fill:#3a2050"/></svg></div>Passage au four <strong>15m-18m</strong> à <strong>180-190°C</strong>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="single-section" id="section-2" data-section-title="Caractéristiques">
+            <div class="single-accordion">
+                <h2 class="title-2 single-accordion-trigger">
+                    <strong>Caractéristiques</strong>
+
+                    <span class="asterisme-2"></span>
+                </h2>
+
+                <div class="single-accordion-content">
+
+                    <ul class="ingredients-list">
+
+
+                        <li>Poids : 280+/- 250g</li>
+
+
+
+                        <li>Longueur : 45cm(+/- 3cm)</li>
+
+
+
+
+
+
+                    </ul>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="single-section" id="section-5" data-section-title="Produits similaires">
+
+            <div class="single-contact-us">
+                Une question sur ce produit ? <a href="{{ path('contact') }}"><strong><a href="" >Contactez-nous</a></strong></a>
+            </div>
+        </div>
+
+
+    </div>
+</main>
+<script defer src="../senzo-core/web-app/require9823?bundle=CDPBundle&amp;items=app/script,header-modal-contact"></script>	</body>
+
+<!-- Mirrored from www.coupdepates.fr/produit/baguette-solene-a-bouts-pointus-18463 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:20:27 GMT -->
+</html>

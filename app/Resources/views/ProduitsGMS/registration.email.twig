@@ -1,0 +1,14 @@
+{% block subject %}
+    Confirmation d'inscription chez MIPA <br/>
+{% endblock %}
+{% block body_text %}
+    {% autoescape false %}
+        Bonjour {{ username }}<br/>
+
+        Ceci est un email entièrement créé par nos soins.<br/>
+        Veuillez confirmer votre inscription en cliquant sur le lien suivant: <a href="{{ confirmationUrl }}">Acitvation de votre compte</a><br/>
+
+        Amicalement,<br/>
+        L'équipe MIPA.<br/>
+    {% endautoescape %}
+{% endblock %}

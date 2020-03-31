@@ -1,0 +1,85 @@
+{% extends 'baseAdmin.html.twig' %}
+
+
+{% block body %}
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1> Produits GMS</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active"> Produits GMS</li>
+                        <li class="active">Afficher tout</li>
+                        <li class="active">Modifier</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+
+        {% for flashMessage in app.session.flashbag.get('Notice') %}
+            <ul><li class="alert-success">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        {% for flashMessage in app.session.flashbag.get('Erreur') %}
+            <ul><li class="alert-danger">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        <br/>
+        <a href="{{ path('afficheallgms') }}">Retour à la liste</a>
+
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+
+                <strong>Modification</strong> Produit
+            </div>
+            <div class="card-body card-block">
+                <form action="{{ path('modifiergms',{'id':p.id}) }}" method="post" enctype="multipart/form-data">
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Libelle:</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="libelle" name="libelle" value="{{ p.libelle }}" class="form-control" required></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Description:</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="description" name="description" value="{{ p.description }}" class="form-control" required></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Prix:</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="prix" name="prix" value="{{ p.prix }}" class="form-control" required></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Référence</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="reference" name="reference" value="{{ p.reference }}" class="form-control" required></div>
+                    </div>
+
+
+                    <div class="row form-group">
+
+                        <small class="form-text text-muted" style="margin-left: 30px;">Veuillez choisir une image</small>
+                        <input type="file"  id="fichier" name="fichier" class=" form-control-label" style="margin-left: 30px;">
+                    </div>
+
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-success btn-sm" id="valider" name="valider"></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

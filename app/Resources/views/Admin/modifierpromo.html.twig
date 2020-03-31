@@ -1,0 +1,113 @@
+{% extends 'baseAdmin.html.twig' %}
+
+
+{% block body %}
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1> Promotions</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active"> Promotions</li>
+                        <li class="active">Afficher tout</li>
+                        <li class="active">Modifier</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+
+        {% for flashMessage in app.session.flashbag.get('Notice') %}
+            <ul><li class="alert-success">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        {% for flashMessage in app.session.flashbag.get('Erreur') %}
+            <ul><li class="alert-danger">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        <br/>
+        <a href="{{ path('afficheallpromo') }}">Retour à la liste</a>
+
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+
+                <strong>Modification</strong> Promotion
+            </div>
+            <div class="card-body card-block">
+                <form action="{{ path('modifierpromo',{'id':p.id}) }}" method="post" enctype="multipart/form-data">
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Description:</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="description" name="description" value="{{ p.description }}" class="form-control" required></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Pourcentage:</label></div>
+                        <div class="col-12 col-md-9"><input type="number" id="pourcentage" name="pourcentage" value="{{ p.pourcentage }}" class="form-control" required></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Date Début:</label></div>
+                        <div class="col-12 col-md-9"><input type="date" id="dateDebut" name="dateDebut" value="{{ p.dateDebut|date('Y-m-d') }}" class="form-control" required></div>
+                    </div>
+
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Date Fin:</label></div>
+                        <div class="col-12 col-md-9"><input type="date" id="dateFin" name="dateFin" value="{{ p.dateFin|date('Y-m-d') }}" class="form-control" required></div>
+                    </div>
+                  {% if p.produitchr != null %}
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="select" class=" form-control-label">*Produit CHR:</label></div>
+                        <div class="col-12 col-md-9">
+                            <select name="produitchr" id="produitchr" class="form-control" required>
+                                {% for c in chr %}
+                                    {% if c.id == p.produitchr.id %}
+                                        <option value="{{ c.id }}" selected>{{ c.libelle }}</option>
+                                    {% else %}
+                                        <option value="{{ c.id }}" >{{ c.libelle }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+            {% endif %}
+                    {% if p.produitgms != null %}
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="select" class=" form-control-label">*Produit CHR:</label></div>
+                        <div class="col-12 col-md-9">
+                            <select name="produitgms" id="produitgms" class="form-control" required>
+                                {% for c in gms %}
+                                    {% if c.id == p.produitgms.id %}
+                                        <option value="{{ c.id }}" selected>{{ c.libelle }}</option>
+                                    {% else %}
+                                        <option value="{{ c.id }}" >{{ c.libelle }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+{% endif %}
+
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-success btn-sm" id="valider" name="valider"></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -37,7 +37,7 @@ class Admin
 
 
     /**
-     * Get id
+     * Get id.
      *
      * @return int
      */
@@ -47,7 +47,7 @@ class Admin
     }
 
     /**
-     * Set username
+     * Set username.
      *
      * @param string $username
      *
@@ -61,7 +61,7 @@ class Admin
     }
 
     /**
-     * Get username
+     * Get username.
      *
      * @return string
      */
@@ -71,7 +71,7 @@ class Admin
     }
 
     /**
-     * Set password
+     * Set password.
      *
      * @param string $password
      *
@@ -85,7 +85,7 @@ class Admin
     }
 
     /**
-     * Get password
+     * Get password.
      *
      * @return string
      */
@@ -94,4 +94,3 @@ class Admin
         return $this->password;
     }
 }
-

@@ -18,14 +18,17 @@ class Produit_GMSType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('libelle', TextType::class)
-                ->add('description', TextareaType::class)
+        $builder->add('libelle', TextType::class, ['required'=>true, 'label'=>'Libelle', 'attr'=>['class'=>'form-control']])
+                ->add('description', TextareaType::class, ['required'=>true, 'label'=>'Description', 'attr'=>['class'=>'form-control']])
                 ->add('filename', FileType::class, array(
                     'label' => 'Insérez une image',
                     'required' => false,
 
                 ))
-                ->add('Ajouter', SubmitType::class);
+                ->add('reference', TextType::class, ['required'=>true, 'label'=>'Référence', 'attr'=>['class'=>'form-control']])
+                ->add('prix', TextType::class, ['required'=>true, 'label'=>'Prix', 'attr'=>['class'=>'form-control']])
+        ;
+
     }/**
      * {@inheritdoc}
      */

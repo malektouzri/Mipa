@@ -1,0 +1,71 @@
+{% extends 'baseAdmin.html.twig' %}
+
+
+{% block body %}
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1> Catégories CHR</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active"> Catégories CHR</li>
+                        <li class="active">Afficher tout</li>
+                        <li class="active">Modifier</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+
+        {% for flashMessage in app.session.flashbag.get('Notice') %}
+            <ul><li class="alert-success">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        {% for flashMessage in app.session.flashbag.get('Erreur') %}
+            <ul><li class="alert-danger">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        <br/>
+        <a href="{{ path('afficheallcat') }}">Retour à la liste</a>
+
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+
+                <strong>Modification</strong> Catégorie
+            </div>
+            <div class="card-body card-block">
+                <form action="{{ path('modifiercat',{'id':p.id}) }}" method="post" enctype="multipart/form-data">
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Nom:</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="nom" name="nom" value="{{ p.nom }}" class="form-control" required></div>
+                    </div>
+
+                    <div class="row form-group">
+
+                        <small class="form-text text-muted" style="margin-left: 30px;">Veuillez choisir une image</small>
+                        <input type="file"  id="fichier" name="fichier" class=" form-control-label" style="margin-left: 30px;">
+                    </div>
+
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-success btn-sm" id="valider" name="valider"></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

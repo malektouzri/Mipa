@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from www.coupdepates.fr/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:05:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+
+    <title>{% block title %}MIPA - Distributeur de produits surgelés {% endblock %}</title>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="{{ asset('template/bundles/cdp/images/logo_fino.png') }}" rel="icon" />
+    <link href="{{ asset('template/cache-buster-1570113083/bundles/cdp/css/styles.min.css') }}" media="" rel="stylesheet" type="text/css" /><script defer="defer" src="{{ asset('template/cache-buster-1556112614/bundles/senzocore/js/lib/polyfills/polyfills.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1561972607/bundles/senzocore/js/lib/polyfills/extensions.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/svgxuse.min.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/css-variables.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1556548469/bundles/cdp/js/libs/swiper.min.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1564649394/bundles/cdp/js/modules/beautified-select.js') }}"></script>
+
+</head>
+{% block style %}
+{% endblock %}
+<body id="senzo_production">
+
+<header class="header">
+
+    <div class="header-bottom">
+        <a href="{{ path('home_page') }}" class="logo">
+            <img src="{{ asset('template/bundles/cdp/images/logo_fino.png') }}" width="120" height="20" alt="Logo FINO">
+        </a>
+
+        <!-- Hamburger menu -->
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <!-- End Hamburger menu -->
+
+        <ul class="menu">
+            <li>
+                <a href="#" title="Histoire & Vision">Votre partenaire</a>
+                <button class="toggle-accordion">
+                    <svg class="icon-chevron">
+                        <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron') }}"></use>
+                    </svg>
+                </button>
+
+                <ul class="submenu">
+
+                    <li>
+                        <a href="{{ path('a_propos') }}" title="Histoire & Vision">Qui sommes nous ?</a>									</li>
+
+                </ul>
+
+            <li>
+                <a href="{{ path('contact') }}" title="Contact">Contact</a>
+            </li>
+
+        </ul>
+
+        <ul class="menu-pictos">
+            <li class="phone" data-content-popin-trigger="call-modal">
+                <svg class="icons">
+                </svg>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/lib/ReCaptcha.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/tool/debounce_event.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Recipe.js') }}"></script>
+
+
+</div>
+
+
+<div class="page-content">
+{% block body %}
+    {% endblock %}
+</div>
+<script defer src="{{ asset('template/senzo-core/web-app/require9823?bundle=CDPBundle&amp;items=app/script,header-modal-contact') }}"></script>	</body>
+
+<!-- Mirrored from www.coupdepates.fr/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:06:14 GMT -->
+</html>

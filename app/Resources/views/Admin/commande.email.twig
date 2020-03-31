@@ -1,0 +1,21 @@
+{% block subject %}
+    Nouvelle commande <br/>
+{% endblock %}
+{% block body_text %}
+    {% autoescape false %}
+        Bonjour,<br/>
+        Client : {{ user.prenom }}  {{ user.nom }}<br/>
+        Numéro de téléphone: {{ user.telephone }} <br/>
+        Adresse: {{ user.adresse }} <br/>
+        <br/> <br/>
+
+        <br/>
+    {% for c in cc %}
+        {{ c.quantite }} * {{ c.idProduit.libelle }} <br/>
+    {% endfor %}
+<br/>
+        Pour un total de : {{ total }} DT
+        Amicalement,<br/>
+        L'équipe MIPA.<br/>
+    {% endautoescape %}
+{% endblock %}

@@ -1,18 +1,82 @@
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
-ajout_gms:
-    path:   /ajoutGMS
-    defaults:   {   _controller: AppBundle:GMS:ajoutGMS    }
+home_page:
+    path:   /home_page
+    defaults:   {   _controller: AppBundle:Default:index    }
 afficheall_gms:
     path:   /afficheAllGMS
     defaults:   {   _controller: AppBundle:GMS:afficheAllGMS    }
 affiche_gms:
     path:   /afficheGMS/{id}
     defaults:   {   _controller: AppBundle:GMS:afficheGMS    }
-modifier_gms:
-    path:   /modifierGMS/{id}
-    defaults:   {   _controller: AppBundle:GMS:modifierGMS    }
 supprimer_gms:
     path:   /supprimerGMS/{id}
     defaults:   {   _controller: AppBundle:GMS:supprimerGMS    }
+affiche_CategoriesCHR:
+  path:   /chr/afficheCategoriesCHR
+  defaults:   {   _controller: AppBundle:CHR:afficheCategoriesCHR    }
+affiche_categorie:
+    path:   /chr/afficheCategorie/{id}
+    defaults:   {   _controller: AppBundle:CHR:afficheCategorie    }
+affiche_chr:
+  path:   /chr/afficheCHR/{id}
+  defaults:   {   _controller: AppBundle:CHR:afficheCHR    }
+add_panier:
+  path:   /chr/addPanier/{id}
+  defaults:   {   _controller: AppBundle:Cart:addPanier    }
+get_panier:
+  path:   /che/getPanier
+  defaults:   {   _controller: AppBundle:Cart:getPanier    }
+remove_item:
+  path:   /chr/removeItem/{id}
+  defaults:   {   _controller: AppBundle:Cart:removeItem    }
+add_panier_gms:
+  path:   /gms/addPanier/{id}
+  defaults:   {   _controller: AppBundle:Cart:addPanierGMS    }
+get_panier_gms:
+  path:   /gms/getPanier
+  defaults:   {   _controller: AppBundle:Cart:getPanierGMS    }
+remove_item_gms:
+  path:   /gms/removeItem/{id}
+  defaults:   {   _controller: AppBundle:Cart:removeItemGMS    }
+
+
+a_propos:
+  path: /apropos
+  defaults:   {   _controller:  AppBundle:Default:apropos }
+contact:
+  path: /chr/contact
+  defaults:   {   _controller:  AppBundle:Default:contact }
+contact_gms:
+  path: /gms/contact
+  defaults:   {   _controller:  AppBundle:Default:contact }
+service_gms:
+  path: /gms/serviceGMS
+  defaults:   {   _controller:  AppBundle:GMS:serviceGMS }
+service_chr:
+  path: /chr/serviceCHR
+  defaults:   {   _controller:  AppBundle:CHR:serviceCHR }
+cmd_chr:
+  path: /chr/cmdCHR
+  defaults:   {   _controller:  AppBundle:Commande:checkoutCHR }
+affiche_cmd:
+  path: /chr/afficheCmd
+  defaults:   {   _controller:  AppBundle:Commande:afficheCmd }
+supprimer_cmd:
+  path: /chr/supprimerCmd/{id}
+  defaults:   {   _controller:  AppBundle:Commande:supprimerCmd }
+cmd_gms:
+  path: /gms/cmdGMS
+  defaults:   {   _controller:  AppBundle:Commande:checkoutGMS }
+affiche_cmd_gms:
+  path: /gms/afficheCmdGMS
+  defaults:   {   _controller:  AppBundle:Commande:afficheCmdGMS }
+supprimer_cmd_gms:
+  path: /gms/supprimerCmdGMS/{id}
+  defaults:   {   _controller:  AppBundle:Commande:supprimerCmdGMS }
+
+
+
+
+

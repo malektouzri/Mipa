@@ -1,0 +1,74 @@
+{% extends 'baseAdmin.html.twig' %}
+
+                    {% block head %}
+                        <div class="dropdown for-notification">
+
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="notification" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-bell"></i>
+                                <span class="count bg-danger">{{ nb + cmd + cmdgms }}</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="notification">
+                                <p class="red">Vous avez {{ nb + cmd + cmdgms}} notification(s)</p>
+
+                               {% if nb != null %}
+
+                                <a class="dropdown-item media bg-flat-color-2" href="{{ path('afficheallnotif') }}">
+                                    <i class="fa fa-check"></i>
+                                    <p>{{ nb }} Demande(s) d'inscription en attente</p></a>
+                                {% endif %}
+
+                                {% if cmd != null %}
+
+                                    <a class="dropdown-item media bg-flat-color-2" href="{{ path('affichecmdattente') }}">
+                                        <i class="fa fa-check"></i>
+                                        <p>{{ cmd }} Commande(s) en attente</p></a>
+                                {% endif %}
+
+                                {% if cmdgms != null %}
+
+                                    <a class="dropdown-item media bg-flat-color-2" href="{{ path('affichecmdgmsattente') }}">
+                                        <i class="fa fa-check"></i>
+                                        <p>{{ cmdgms }} Commande(s) gms en attente</p></a>
+                                {% endif %}
+                            </div>
+
+                        </div>
+                    {% endblock %}
+{% block body %}
+    <div class="content mt-3" >
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Mes Informations</strong>
+                        </div>
+                        <div class="card-body">
+                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Nom Utilisateur</th>
+                                    <th>Modifier</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                    <tr>
+                                        <td>{{ p.username }}</td>
+                                        <td><a href="{{ path('modifieradmin', {'id':p.id}) }}">Modifier</a></td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+
+    </div>
+
+{% endblock %}

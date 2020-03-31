@@ -1,0 +1,107 @@
+{% extends 'baseMenuCHR.html.twig' %}
+
+{% block barre %}
+    <div class="page-top" style="background-image: url({{ asset('uploads/images/' ~ cat.filename) }})">
+
+
+        <!-- <div class="title-1">Collaboration</div> -->
+        <h1 class="title-1">
+            Nos {{ cat.nom }}	</h1>
+    </div>
+{% endblock %}
+
+{% block menu %}
+    <div class="wrapper">
+		<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="{{ path('home_page') }}" itemprop="url">
+				<span itemprop="title">Accueil</span>
+			</a>
+            <svg class="icon-chevron">
+                <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron') }}"></use>
+            </svg>
+		</span>
+        <span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="{{ path('affiche_CategoriesCHR') }}" itemprop="url">
+				<span itemprop="title">Nos Produits CHR</span>
+			</a>
+            <svg class="icon-chevron">
+                <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron') }}"></use>
+            </svg>
+		</span>
+        <span>
+			Nos {{ cat.nom }}	</span>
+
+    </div>
+{% endblock %}
+
+{% block produit %}
+    <div class="wrapper">
+        <ul id="search-tags" class="selected-filters"></ul>
+
+
+        <div class="card-list">
+            {% for c in chr %}
+
+                <div class="card--s " data-product="1586">
+                    <div class="card-img" >
+<img src="{{ asset('uploads/images/' ~ c.filename) }}" height="500" width="500">
+
+                    </div>
+
+                    <div class="card-content">
+
+                        <div class="card-main">
+                            <div class="card-ref">
+                                Réf. {{ c.reference }}			</div>
+
+                            <div class="card-title">
+                                <a href="{{ path('affiche_chr', { 'id': c.id}) }}">{{ c.libelle }}</a>
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+
+                            <div class="card-tags">
+
+
+
+                                <div class="tag"  data-tooltip-content="Cuit surgelé" style="background-color: #c22c25">
+
+                                </div>
+
+
+
+
+
+                                <div class="tag" data-tooltip-content="Décongélation">
+                                    <img src="{{ asset('template/bundles/cdp/images/implementation_step/decongelation.svg') }}" alt="Décongélation" />
+                                </div>
+
+
+                            </div>
+
+                            {% for p in promo %}
+                                {% if p.produitchr.id == c.id %}
+                                    <button class="card-fav " data-reference="18463">
+                                        <!-- État actif -->
+                                        <img src="{{ asset('images/promo.png') }}" height="80" width="80">
+                                    </button>
+                                {% endif %}
+                            {% endfor %}
+
+
+                        </div>
+                    </div>
+
+                </div>
+            {% endfor %}
+
+        </div>
+
+        <div class="more-content">
+        </div>
+
+    </div>
+
+
+{% endblock %}

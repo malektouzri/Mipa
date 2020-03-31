@@ -1,0 +1,74 @@
+{% extends 'baseAdmin.html.twig' %}
+
+
+{% block body %}
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1> Mon Profile</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active"> Mon Profile</li>
+                        <li class="active">Modifier</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="content">
+
+        {% for flashMessage in app.session.flashbag.get('Notice') %}
+            <ul><li class="alert-success">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        {% for flashMessage in app.session.flashbag.get('Erreur') %}
+            <ul><li class="alert-danger">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        <br/>
+        <a href="{{ path('home') }}">Retour</a>
+
+    </div>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+
+                <strong>Modification</strong> Profile
+            </div>
+            <div class="card-body card-block">
+                <form action="{{ path('modifieradmin',{'id':p.id}) }}" method="post" enctype="multipart/form-data">
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Nom d'utilisateur:</label></div>
+                        <div class="col-12 col-md-9"><input type="text" id="username" name="username" value="{{ p.username }}" class="form-control" required></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Nouveau mot de passe:</label></div>
+                        <div class="col-12 col-md-9"><input type="password" id="password" name="password"  class="form-control" required></div>
+                    </div>
+                    <div class="row form-group">
+                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">*Vérification:</label></div>
+                        <div class="col-12 col-md-9"><input type="password" id="repassword" name="repassword"  class="form-control" required></div>
+                    </div>
+
+
+
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-success btn-sm" id="valider" name="valider"></div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

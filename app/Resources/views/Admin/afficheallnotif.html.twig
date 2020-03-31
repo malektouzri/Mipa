@@ -1,0 +1,48 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+    <div class="content mt-3" style="width: 1110px">
+        <div class="animated fadeIn">
+            <div class="row">
+
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-header">
+                            <strong class="card-title">Liste des utilisateurs particuliers</strong>
+                        </div>
+                        <div class="card-body">
+                            <table id="bootstrap-data-table" class="table table-striped table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Nom</th>
+                                    <th>Nom Entreprise</th>
+                                    <th>Email</th>
+                                    <th>Téléphone</th>
+                                    <th>Détails</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                {% for p in users %}
+                                    <tr>
+                                        <td>{{ p.prenom }} {{ p.nom }}</td>
+                                        <td>{{ p.nomEntreprise }}</td>
+                                        <td>{{ p.email }}</td>
+                                        <td>{{ p.telephone }}</td>
+                                        <td><a href="{{ path('detailnotif', {'id':p.id}) }}">Détails</a></td>
+                                    </tr>
+                                {% endfor %}
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+
+    </div>
+
+{% endblock %}

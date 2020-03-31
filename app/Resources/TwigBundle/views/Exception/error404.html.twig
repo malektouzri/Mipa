@@ -1,0 +1,11 @@
+{% extends 'basefos.html.twig' %}
+{% block body %}
+    <h1 style="margin-top: 50px;text-align: center;font-weight: bold;font-style: italic;font-family:Helvetica Neue, Helvetica, Arial, sans-serif">Oops! Nous n'avons pas pu trouvé ce que vous cherchez ...</h1>
+    <h2 style="margin-top: 10px;text-align: center;font-weight: bold;font-style: italic;">On espére que ce petit chaton vous aidera à ne pas être contrarié(e) et visiter une autre page .</h2>
+
+    <div>
+        <img src="{{ asset('uploads/images/chaton.jpg') }}" style="text-align: center;margin-left: 450px;margin-top: 20px">
+    </div>
+    <a href="{{ path('home_page') }}" style="margin-top: 10px;text-align: center;font-weight: bolder;font-style: oblique;margin-left: 600px;text-decoration: underline">Retour à la page d'acceuil</a>
+    <a href="{{ path('contactbase') }}" style="margin-top: 10px;text-align: center;font-weight: bolder;font-style: oblique;margin-left: 550px;text-decoration: underline">Contactez nous pour signaler le problème</a>
+{% endblock %}

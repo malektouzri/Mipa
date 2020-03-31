@@ -1,0 +1,94 @@
+{% extends 'ProduitsCHR/afficheCmd.html.twig' %}
+
+{% block style %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+            margin: auto;
+            text-align: center;
+            font-family: arial;
+        }
+
+        .title {
+            color: grey;
+            font-size: 18px;
+        }
+
+        input[type=submit] {
+            border: none;
+            outline: 0;
+            display: inline-block;
+            padding: 8px;
+            color: white;
+            background-color: #E51406;
+            text-align: center;
+            cursor: pointer;
+            width: 100%;
+            font-size: 18px;
+        }
+
+
+        input[type=submit]:hover {
+            opacity: 0.7;
+        }
+    </style>
+{% endblock %}
+
+
+{% block title %}
+    Mon Profile
+{% endblock %}
+
+{% block body %}
+    <div >
+        {% for message in app.flashes('Notice') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+        {% for message in app.flashes('Erreur') %}
+            <div class="flash-notice">
+                {{ message }}
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <h2 style="text-align:center;font-weight: bold"><strong>Mon Profile</strong></h2>
+
+    <div class="card">
+        <form method="post">
+        <label for="prenom">Prénom:</label><br/>
+            <input type="text" name="prenom" value="{{ user.prenom }}" required><br/>
+        <label for="nom">Nom:</label><br/>
+        <input type="text" name="nom" value="{{ user.nom }}" required><br/>
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" name="username" value="{{ user.username }}" required><br/>
+        <label for="email">Email:</label><br/>
+        <input type="email" name="email" value="{{ user.email }}" required><br/>
+        <label for="telephone">Téléphone:</label><br/>
+        <input type="tel" name="telephone" value="{{ user.telephone }}" required><br/>
+            <label for="adresse">Adresse:</label><br/>
+            <input type="text" name="adresse" value="{{ user.adresse }}" required><br/>
+        <label for="nomEntreprise">Nom Entreprise:</label>
+        <input type="text" name="nomEntreprise" value="{{ user.nomEntreprise }}" required><br/>
+        <label for="adresseEntreprise">Adresse Entreprise:</label>
+        <input type="text" name="adresseEntreprise" value="{{ user.adresseEntreprise }}" required><br/>
+        <label for="emailEntreprise">Email Entreprise:</label>
+        <input type="email" name="emailEntreprise" value="{{ user.emailEntreprise }}" required><br/>
+        <label for="telephoneEntreprise">Téléphone Entreprise:</label>
+        <input type="tel" name="telephoneEntreprise" value="{{ user.telephoneEntreprise }}" required><br/>
+
+        <div style="margin: 24px 0;">
+            <a href="{{ path('modif_mdp') }}">Nouveau mot de passe?</a>
+        </div>
+        <p><input type="submit" name="valider" id="valider" value="Modifier"></p>
+        </form>
+    </div>
+
+
+
+{% endblock %}
+

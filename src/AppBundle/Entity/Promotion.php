@@ -24,7 +24,12 @@ class Promotion
     /**
      * @ORM\OneToOne(targetEntity="AppBundle\Entity\Produit_Particulier")
      */
-    private $produit;
+    private $produitchr;
+
+    /**
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Produit_GMS")
+     */
+    private $produitgms;
 
     /**
      * @var int
@@ -41,11 +46,19 @@ class Promotion
     private $description;
 
     /**
-     * @var string
+     * @var \DateTime
      *
-     * @ORM\Column(name="filename", type="string", length=255)
+     * @ORM\Column(name="DateDebut", type="date")
      */
-    private $filename;
+    private $dateDebut;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="DateFin", type="date")
+     */
+    private $dateFin;
+
 
 
     /**
@@ -107,27 +120,70 @@ class Promotion
     }
 
     /**
-     * Set filename
-     *
-     * @param string $filename
-     *
-     * @return Promotion
+     * @return mixed
      */
-    public function setFilename($filename)
+    public function getProduitchr()
     {
-        $this->filename = $filename;
-
-        return $this;
+        return $this->produitchr;
     }
 
     /**
-     * Get filename
-     *
-     * @return string
+     * @param mixed $produitchr
      */
-    public function getFilename()
+    public function setProduitchr($produitchr)
     {
-        return $this->filename;
+        $this->produitchr = $produitchr;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getProduitgms()
+    {
+        return $this->produitgms;
+    }
+
+    /**
+     * @param mixed $produitgms
+     */
+    public function setProduitgms($produitgms)
+    {
+        $this->produitgms = $produitgms;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateDebut()
+    {
+        return $this->dateDebut;
+    }
+
+    /**
+     * @param \DateTime $dateDebut
+     */
+    public function setDateDebut($dateDebut)
+    {
+        $this->dateDebut = $dateDebut;
+    }
+
+    /**
+     * @return \DateTime
+     */
+    public function getDateFin()
+    {
+        return $this->dateFin;
+    }
+
+    /**
+     * @param \DateTime $dateFin
+     */
+    public function setDateFin($dateFin)
+    {
+        $this->dateFin = $dateFin;
+    }
+
+
+
 }
 

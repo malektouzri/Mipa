@@ -1,0 +1,195 @@
+{% extends 'baseMenuCHR.html.twig' %}
+
+{% block stylesheet %}
+<style>
+    #banner {
+        height: 90px;
+        width:800px;
+        background-color: #333;
+        border-radius: 15px;
+        position: relative;
+        /*opacity: 0;*/
+        font: 0.9em Verdana, Helvetica, sans-serif;
+        color: white;
+        /*overflow: hidden;*/
+    }
+    .slideshow {
+
+        width: 1300px;
+
+        height: 50px;
+
+        overflow: hidden;
+
+        border: 3px solid #F2F2F2;
+
+        margin-left: 20px;
+
+    }
+
+    .slideshow ul {
+
+        /* 4 images donc 4 x 100% */
+
+        width: 1300%;
+
+        height: 50px;
+
+        padding:0; margin:0;
+
+        list-style: none;
+
+    }
+
+    .slideshow li {
+
+        float: left;
+        text-align: center;
+
+    }
+    h3 {
+        color: #E51406;
+        font-style: italic;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block banner %}
+    {% if promo != null %}
+        <div class="slideshow" id="slideshow">
+
+            <ul>
+                {% for p in promo %}
+                    <li>
+                        <h3 style="width: 1300px; height: 50px;margin-top: 5px">Découvrez nos promos: {{ p.pourcentage }}% sur notre {{ p.produitchr.libelle }}  </h3>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endblock %}
+
+{% block barre %}
+    <div class="page-top" style="background-image: url({{ asset('template/coup-de-pates/Documents/coup-de-pates/products/header-listing-produits.jpg') }})">
+
+
+        <!-- <div class="title-1">Collaboration</div> -->
+        <h1 class="title-1">
+            Nos produits	</h1>
+    </div>
+{% endblock %}
+
+{% block menu %}
+    <div class="wrapper">
+		<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="{{ path('home_page') }}" itemprop="url">
+				<span itemprop="title">Accueil</span>
+			</a>
+            <svg class="icon-chevron">
+                <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron') }}"></use>
+            </svg>
+		</span>
+        <span>
+			Nos produits CHR	</span>
+
+
+    </div>
+{% endblock %}
+
+{% block body %}
+    <div class="wrapper">
+        <button class="btn-2 recommandation-mobile-trigger">Recommandations</button>
+
+        <section class="recommandation-section product-modal">
+            <div class="recommandation-inner-section">
+                <div class="recommandation-mobile-header">
+                    <button class="recommandation-mobile-close product-modal-close">
+                        <svg class="icon-close">
+                            <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-close') }}"></use>
+                        </svg>
+                    </button>
+
+                </div>
+
+                <div class="recommandation-bottom">
+                    {% for c in cat %}
+
+                        <a href="{{ path('affiche_categorie', { 'id': c.id}) }}" data-sha="52273" class="recommandation-big-input ">
+							<span class="recommandation-check">
+								<svg class="icon-check">
+									<use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-check') }}"></use>
+								</svg>
+							</span>
+
+                            <span class="recommandation-input-img" style="background-image: url({{ asset('uploads/images/' ~ c.filename) }})">
+							</span>
+
+                            <span class="recommandation-input-title">NOS {{ c.nom }}</span>
+                        </a>
+
+                    {% endfor %}
+
+                </div>
+                <div class="recommandation-bottom">
+                    {% for c in cat1 %}
+
+                        <a href="{{ path('affiche_categorie', { 'id': c.id}) }}" data-sha="52273" class="recommandation-big-input ">
+							<span class="recommandation-check">
+								<svg class="icon-check">
+									<use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-check') }}"></use>
+								</svg>
+							</span>
+
+                            <span class="recommandation-input-img" style="background-image: url({{ asset('uploads/images/' ~ c.filename) }})">
+							</span>
+
+                            <span class="recommandation-input-title">NOS {{ c.nom }}</span>
+                        </a>
+
+                    {% endfor %}
+
+                </div>
+
+                <div class="recommandation-action">
+                    <button class="btn-2">Valider</button>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+{% endblock %}
+
+{% block script %}
+    <script type="application/javascript">
+        function myFunction() {
+            var txt;
+            var r = confirm("Press a button!");
+            if (r == true) {
+
+            }
+        }
+    </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(function(){
+
+            setInterval(function(){
+
+                $(".slideshow ul").animate({marginLeft:-350},800,function(){
+
+                    $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+
+                })
+
+            }, 3500);
+
+        });
+
+    </script>
+{% endblock %}

@@ -28,6 +28,13 @@ class Categorie_Particulier
      */
     private $nom;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="filename", type="string", length=255)
+     */
+    private $filename;
+
 
     /**
      * Get id
@@ -62,5 +69,23 @@ class Categorie_Particulier
     {
         return $this->nom;
     }
+
+    /**
+     * @return string
+     */
+    public function getFilename()
+    {
+        return $this->filename;
+    }
+
+    /**
+     * @param string $filename
+     */
+    public function setFilename($filename)
+    {
+        $this->filename = $filename;
+    }
+
+
 }
 

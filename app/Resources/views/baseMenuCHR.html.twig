@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from www.coupdepates.fr/liste-produits by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:07:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>{% block title %}Nos produits - FINO{% endblock %}</title><meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link href={{ asset('template/bundles/cdp/images/logos/logo_fino.png') }} rel="icon" />
+    <link href="{{ asset('template/cache-buster-1570113083/bundles/cdp/css/styles.min.css') }}" media="" rel="stylesheet" type="text/css" /><script defer="defer" src="cache-buster-1556112614/bundles/senzocore/js/lib/polyfills/polyfills.js"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1561972607/bundles/senzocore/js/lib/polyfills/extensions.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/svgxuse.min.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/css-variables.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1556548469/bundles/cdp/js/libs/swiper.min.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1564649394/bundles/cdp/js/modules/beautified-select.js') }}"></script>
+    <script>
+        //<!--
+        Object.defineProperty(window, "recaptcha_key_public", { value: "6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH" });    //-->
+    </script>
+    <script defer="defer" src="../www.google.com/recaptcha/api9881.js?render=6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH"></script><script defer src="bundles/cdp/js/compiled/model/Geo.js"></script>
+    {% block stylesheet %}
+    {% endblock %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16084831-1"></script>
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+
+        gtag('config', 'UA-16084831-1', {"anonymize_ip":true});
+
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        * {box-sizing: border-box;}
+
+        .topnav {
+            overflow: hidden;
+            background-color: #e9e9e9;
+        }
+
+        .topnav a {
+            float: right;
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #2196F3;
+            color: white;
+        }
+
+        .topnav .search-container {
+            float: right;
+        }
+
+        .topnav input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+        }
+
+        .topnav .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .topnav .search-container button:hover {
+            background: #ccc;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav .search-container {
+                float: none;
+            }
+            .topnav a, .topnav input[type=text], .topnav .search-container button {
+                float: none;
+                display: block;
+                text-align: left;
+                width: 100%;
+                margin: 0;
+                padding: 14px;
+            }
+            .topnav input[type=text] {
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+<body id="senzo_production">
+
+<header class="header">
+    <div class="header-top">
+        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="../bundles/cdp/images/sprite.svg#icon-change"></use></svg></a>	</div>
+
+    <div class="header-bottom">
+        <a href="{{ path('home_page') }}" class="logo">
+            <img src="{{ asset('template/bundles/cdp/images/logo_fino.png') }}" width="120" height="20" alt="Logo FINO">
+        </a>
+
+        <!-- Hamburger menu -->
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <!-- End Hamburger menu -->
+
+        <ul class="menu">
+            <li>
+                <a href="#" title="Histoire & Vision">Votre partenaire</a>
+                <button class="toggle-accordion">
+                    <svg class="icon-chevron">
+                        <use xlink:href="bundles/cdp/images/sprite.svg#icon-chevron"></use>
+                    </svg>
+                </button>
+
+                <ul class="submenu">
+
+                    <li>
+                        <a href="{{ path('aproposchr') }}" title="Histoire & Vision">Qui sommes nous ?</a>									</li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="{{ path('affiche_CategoriesCHR')}}" title="Nos produits">Nos produits</a>
+            </li>
+            <li>
+                <a href="{{ path('service_chr') }}" title="Nos services">Nos services</a>
+            </li>
+
+            <li>
+                <a href="{{ path('contactchr') }}" title="Contact">Contact</a>
+            </li>
+            <li>
+            <a href="{{ path('profile') }}" title="Profile">Profile</a>
+            <button class="toggle-accordion">
+                <svg class="icon-chevron">
+                    <use xlink:href="bundles/cdp/images/sprite.svg#icon-chevron"></use>
+                </svg>
+            </button>
+
+            <ul class="submenu">
+
+                <li>
+                    <a href="{{ path('get_panier') }}" title="Panier">Mon Panier</a>	</li>
+                <li>
+                    <a href="{{ path('affiche_cmd') }}" title="Commande">Mes Commandes</a>	</li>
+
+            </ul>
+            </li>
+            <li >
+                <a href="{{ path('logout_part') }}" title="déconnexion">Déconnexion</a>
+            </li>
+            <div class="search-container" style="margin-top: 30px;margin-right: 10px">
+                <form action="{{ path('recherchechr') }}" method="post">
+                    <input type="text" placeholder="Rechercher.." name="ref" id="ref" >
+                    <button type="submit" id="valider" name="valider"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+        </ul>
+
+
+    </div>
+</header>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/lib/ReCaptcha.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/tool/debounce_event.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Recipe.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/search.js') }}"></script>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine_modal.js') }}"></script>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/selection.js') }}"></script>
+
+<script>
+    "use strict";
+    {
+        const key = "gdpr-agreement-expires";
+        const container = document.getElementById("gdpr-info-bar");
+
+        if (+localStorage.getItem(key) < Date.now())
+        {
+            container.classList.add("is-visible");
+            container.querySelector("button").addEventListener(
+                "click",
+                function ()
+                {
+                    container.classList.remove("is-visible");
+                    const now = new Date();
+                    const expires = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate(), 0, 0, 0, 0);
+                    localStorage.setItem(key, expires.getTime());
+                }
+            );
+        }
+    }
+</script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
+<main class="main page-product-list">
+    <breadcrumb-block>
+       {% block menu %}
+        {% endblock %}
+    </breadcrumb-block>
+{% block banner %}
+    {% endblock %}
+  {% block barre %}
+    {% endblock %}
+
+    <div class="page-content">
+       {% block body %}
+        {% endblock %}
+      {% block produit %}
+        {% endblock %}
+
+        <div class="text">
+            <section class="promo-section">
+                <div class="wrapper wrapper--wide">
+
+                    <div class="promo-section-item" style="background-image: url({{ asset('template/coup-de-pates/Documents/coup-de-pates/footer/visuel-telephone.jpg') }});">
+
+                        <h3 class="promo-section-title">
+                            Une question<br />
+                            au sujet de nos produits ?				</h3>
+
+                        <span class="asterisme"></span>
+
+                        <div class="promo-section-action">
+                            <a href="{{ path('contact') }}" class="btn-2" title="CONTACTEZ-NOUS">CONTACTEZ-NOUS</a>				</div>
+                    </div>
+
+
+                    <div class="promo-section-item" style="background-image: url({{ asset('template/coup-de-pates/Documents/coup-de-pates/footer/visuel-acheter.jpg') }});">
+
+                        <h3 class="promo-section-title">
+                            ACHETEZ NOS PRODUITS !<br />
+                            Commandez en ligne dés maintenant.				</h3>
+
+                        <span class="asterisme"></span>
+
+                        <div class="promo-section-action">
+                            <a href="{{ path('register_part') }}" class="btn-2" title="Devenir client">Devenir client</a>				</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+</main>
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="wrapper">
+            <div class="siteinfo-contact">
+                <a href="boulanger-patissier.html">
+                    <img class="logo" alt="Logo FINO" title="Logo FINO" src="{{ asset('template/bundles/cdp/images/logos/logo_fino.png') }}">
+                </a>
+            </div>
+
+            <div class="siteinfo-links">
+                <ul class="links-columns">
+                    <li class="link-label-full no-link">
+                        Votre partenaire					</li>
+
+                    <li class="link-field">
+                        <a href="{{ path('aproposchr') }}" title="Histoire & Vision">Qui sommes nous ?</a>													<a href="content/engagements.html" title="Engagements">Engagements</a>													<a href="content/demarche.html" title="Démarche qualité">Démarche qualité</a>													<a href="content/innovation.html" title="Innovation">Innovation</a>													<a href="content/proximite.html" title="Proche de vous">Proche de vous</a>													<a href="collaborations.html" title="Collaborations">Collaborations</a>											</li>
+                </ul>
+
+                <ul class="links-columns">
+                    <li class="link-label">
+                        <a href="{{ path('affiche_CategoriesCHR') }}" title="Nos produits">Nos produits</a>						</li>
+                    <li class="link-label">
+                        <a href="{{ path('service_chr') }}" title="Nos services">Nos services</a>						</li>
+
+
+                </ul>
+
+                <ul class="links-columns">
+
+                    <li class="link-label">
+                        <a href="{{ path('contactchr') }}" title="Contactez-nous">Contactez-nous</a>						</li>
+
+                </ul>
+
+                <div class="social">
+                    <span class="join-us">Nous rejoindre sur les réseaux :</span>
+                    <div class="social-links">
+
+
+                        <a href="#" title="Facebook"><img alt="" title="" src="{{ asset('template/coup-de-pates/Documents/coup-de-pates/icon-fb.png') }}" /></a>
+
+
+                        <a href="#" title="Instagram"><img alt="" title="" src="{{ asset('template/coup-de-pates/Documents/coup-de-pates/icon-instagram.png') }}" /></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <back-totop class="js-back-to-top">
+        <svg class="icon-arrow">
+            <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-arrow') }}"></use>
+        </svg>
+    </back-totop>
+
+
+</footer>
+
+
+<script>
+    /* Accordion footer Responsive */
+    "use strict";
+    {
+        const acc = document.getElementsByClassName("link-label-full");
+        let i = 0;
+
+        for (; i < acc.length; ++i)
+        {
+            acc[i].addEventListener(
+                "click",
+                function ()
+                {
+                    this.classList.toggle("active");
+                    const panel = this.nextElementSibling;
+                    if (panel.style.maxHeight)
+                    {
+                        panel.style.maxHeight = null;
+                    }
+                    else
+                    {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                }
+            );
+        }
+    }
+</script>
+<script defer src="{{ asset('template/senzo-core/web-app/require8dc4?bundle=CDPBundle&amp;items=app/script,header-modal-contact,product-listing') }}"></script>	</body>
+{% block script %}
+{% endblock %}
+<script src={{ asset ("js/login/jquery-3.2.1.min.js") }}></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+<script src="{{ asset("js/jquery-ui.min.js") }}"></script>
+<script type="text/javascript">
+
+    $(function () {
+        $('#ref').autocomplete({
+            source:function (request,response) {
+                $.ajax({
+                    url: '{{ path('searchchr') }}',
+                    type: 'post',
+                    dataType: 'json',
+                    data: { 'search' : request.term },
+                    success: function(data){
+                        response(data);
+                    }
+                });
+            },
+            select: function (event,ui) {
+                $('#ref').val(ui.item.label);
+                return false;
+            }
+        })
+    })
+
+
+</script>
+<!-- Mirrored from www.coupdepates.fr/liste-produits by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:07:26 GMT -->
+</html>

@@ -1,0 +1,57 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+
+    <div class="col-lg-4 col-md-6">
+        <aside class="profile-nav alt">
+            <section class="card">
+                <div class="card-header user-header alt bg-dark">
+                    <div class="media">
+
+                        <div class="media-body">
+                            <h2 class="text-light display-6">{{ e.prenom }} {{ e.nom }}</h2>
+                            <p>{{ e.username }}</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <strong>Téléphone: </strong> {{ e.telephone}}                    </li>
+                    <li class="list-group-item">
+                        <strong>Adresse: </strong> {{ e.adresse }}
+                    </li>
+                    <li class="list-group-item">
+                        <strong>Email: </strong> {{ e.email  }}              </li>
+                    <li class="list-group-item">
+                        <strong>Nom Entreprise: </strong> {{ e.nomEntreprise }}                    </li>
+                    <li class="list-group-item">
+                        <strong>Adresse Entreprise: </strong> {{ e.adresseEntreprise}}                    </li>
+                    <li class="list-group-item">
+                        <strong>Email Entreprise: </strong> {{ e.emailEntreprise}}                    </li>
+                    <li class="list-group-item">
+                        <strong>Téléphone Entreprise: </strong> {{ e.telephoneEntreprise}}                    </li>
+
+
+                    <li class="list-group-item">
+                        <a onclick="return accepter()" href="{{ path('accepternotif', {'id':e.id}) }}">Accepter</a>             </li>
+
+                    <li class="list-group-item">
+                        <a onclick="return refuser()" href="{{ path('refuser', {'id':e.id}) }}">Refuser</a>             </li>
+                </ul>
+
+            </section>
+        </aside>
+    </div>
+    <script>
+        function accepter() {
+            return confirm("Etes-vous sur de vouloir accepter cet utilisateur?");
+
+        }
+        function refuser() {
+            return confirm("Etes-vous sur de vouloir supprimer cet utilisateur?");
+
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% block subject %}
+   Nouvelle demande d'inscription chez MIPA <br/>
+{% endblock %}
+{% block body_text %}
+    {% autoescape false %}
+        Bonjour,<br/>
+     Un nouveau membre souhaite accéder à l'espace pro sous le nom de : {{ user.prenom }}  {{ user.nom }}<br/>
+     Nom entreprise: {{ user.nomEntreprise }}
+        <br/>
+         <a href="{{ path('login_admin') }}">Se connecter pour plus de détails</a><br/>
+
+        Amicalement,<br/>
+        L'équipe MIPA.<br/>
+    {% endautoescape %}
+{% endblock %}

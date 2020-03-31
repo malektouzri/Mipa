@@ -1,0 +1,17 @@
+{% block subject %}
+    Récapitulatif commande <br/>
+{% endblock %}
+{% block body_text %}
+    {% autoescape false %}
+        Bonjour {{ user.prenom }}  {{ user.nom }},<br/>
+        Vous avez commandé:<br/>
+        <br/> <br/>
+        {% for c in cc %}
+            {{ c.quantite }} * {{ c.idProduit.libelle }} à {{ c.idProduit.prix * c.quantite }} DT<br/>
+        {% endfor %}
+        <br/>
+        Pour un total de: {{ total }} DT
+        Amicalement,<br/>
+        L'équipe MIPA.<br/>
+    {% endautoescape %}
+{% endblock %}

@@ -10,4 +10,19 @@ namespace AppBundle\Repository;
  */
 class Produit_GMSRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function byRef($ref){
+        $query = $this::createQueryBuilder('p')
+            ->where('p.reference like :reference')
+            ->setParameter('reference','%'.$ref.'%')
+            ->getQuery();
+        return $query->getResult();
+    }
+
+    public function byLibelle($ref){
+        $query = $this::createQueryBuilder('p')
+            ->where('p.libelle like :libelle')
+            ->setParameter('libelle','%'.$ref.'%')
+            ->getQuery();
+        return $query->getResult();
+    }
 }

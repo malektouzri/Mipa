@@ -1,0 +1,138 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+
+    <div class="breadcrumbs">
+        <div class="col-sm-4">
+            <div class="page-header float-left">
+                <div class="page-title">
+                    <h1> Commandes</h1>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li class="active">Commandes</li>
+                        <li class="active">Recherche</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        {% for flashMessage in app.session.flashbag.get('Notice') %}
+            <ul><li class="alert-success">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        {% for flashMessage in app.session.flashbag.get('Erreur') %}
+            <ul><li class="alert-danger">
+                    {{flashMessage}}
+                </li></ul>
+        {% endfor%}
+        <br/>
+    </div>
+    <div class="content mt-3">
+        <div class="col-lg-6">
+            <div class="align-content-center">
+                <div class="card">
+                    <div class="card-header">
+                        <strong>Recherche </strong>Commandes
+                    </div>
+
+                    <div class="card-body card-block">
+
+                        <form method="post" action="{{ path ('recherchecmd') }}" >
+
+                            <div class="row form-group">
+                                <div class="col col-md-3"><label for="text-input" class=" form-control-label">Date:</label></div>
+                                <div class="col-12 col-md-9"><input type="date" id="ref" name="ref"  class="form-control" value="{{ ref }}" required placeholder="Format d-m-Y"></div>
+                            </div>
+
+                            <div class="card-footer">
+
+                                <input type="submit" value="Valider" class="btn btn-success btn-sm" id="valider" name="valider">
+
+                                <input type="button" value="Réinitialiser" class="btn btn-danger btn-sm" id="re" name="re">
+                            </div>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="col-md-8">
+
+        <div class="card-body card-block">
+            <table class="table" >
+                <th>Date</th>
+                <th>Quantité</th>
+                <th>Produit</th>
+                <th>Entreprise</th>
+                <th>Etat</th>
+                <th>Modifier</th>
+                <th>Supprimer</th>
+                {% for p in pdts %}
+                    <tr>
+                        <td>{{ p.date|date('d-m-Y') }}</td>
+                        <td>{{ p.quantite }}</td>
+                        <td>{{ p.idProduit.libelle }}</td>
+                        <td>{{ p.idUser.nomEntreprise }}</td>
+                        <td>{{ p.etat }}</td>
+                        <td><a href="{{ path('modifiercmd', {'id':p.id}) }}">Modifier</a></td>
+                        <td><a onclick="return myDelete()" href="{{ path('supprimercmd', {'id':p.id}) }}">Supprimer</a></td>
+                    </tr>
+                {% endfor %}
+
+            </table>
+        </div>
+    </div>
+
+
+
+
+    <script src={{ asset ("js/login/jquery-3.2.1.min.js") }}></script>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="{{ asset("js/jquery-ui.min.js") }}"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('#re').click(function () {
+                $('#ref').val("");
+            })
+        })
+        $(function () {
+            $('#ref').autocomplete({
+                source:function (request,response) {
+                    $.ajax({
+                        url: '{{ path('datecmd') }}',
+                        type: 'post',
+                        dataType: 'json',
+                        data: { 'search' : request.term },
+                        success: function(data){
+                            response(data);
+                        }
+                    });
+                },
+                select: function (event,ui) {
+                    $('#ref').val(ui.item.label);
+                    return false;
+                }
+            })
+        })
+
+
+    </script>
+    <script>
+        function myDelete() {
+            return confirm("Etes-vous sur de vouloir supprimer cet élément?");
+        }
+    </script>
+
+{% endblock %}

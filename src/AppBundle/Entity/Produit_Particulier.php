@@ -54,6 +54,13 @@ class Produit_Particulier
      */
     private $prix;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="reference", type="string", length=255)
+     */
+    private $reference;
+
 
     /**
      * Get id
@@ -175,6 +182,22 @@ class Produit_Particulier
     public function setCategories($categories)
     {
         $this->categories = $categories;
+    }
+
+    /**
+     * @return string
+     */
+    public function getReference()
+    {
+        return $this->reference;
+    }
+
+    /**
+     * @param string $reference
+     */
+    public function setReference($reference)
+    {
+        $this->reference = $reference;
     }
 
 

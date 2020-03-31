@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="fr" prefix="og: http://ogp.me/ns#">
+
+<!-- Mirrored from www.coupdepates.fr/liste-produits by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:07:00 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <title>{% block title %}Nos produits - FINO{% endblock %}</title><meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <link href={{ asset('template/bundles/cdp/images/logos/logo_fino.png') }} rel="icon" />
+    <link href="{{ asset('template/cache-buster-1570113083/bundles/cdp/css/styles.min.css') }}" media="" rel="stylesheet" type="text/css" /><script defer="defer" src="cache-buster-1556112614/bundles/senzocore/js/lib/polyfills/polyfills.js"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1561972607/bundles/senzocore/js/lib/polyfills/extensions.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/svgxuse.min.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/css-variables.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1556548469/bundles/cdp/js/libs/swiper.min.js') }}"></script>
+    <script defer="defer" src="{{ asset('template/cache-buster-1564649394/bundles/cdp/js/modules/beautified-select.js') }}"></script>
+    <script>
+        //<!--
+        Object.defineProperty(window, "recaptcha_key_public", { value: "6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH" });    //-->
+    </script>
+    <script defer="defer" src="../www.google.com/recaptcha/api9881.js?render=6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH"></script><script defer src="bundles/cdp/js/compiled/model/Geo.js"></script>
+    {% block stylesheet %}
+    {% endblock %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16084831-1"></script>
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+
+        gtag('config', 'UA-16084831-1', {"anonymize_ip":true});
+
+    </script>
+</head>
+<body id="senzo_production">
+
+<header class="header">
+    <div class="header-top">
+        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="../bundles/cdp/images/sprite.svg#icon-change"></use></svg></a>	</div>
+
+    <div class="header-bottom">
+        <a href="{{ path('home_page') }}" class="logo">
+            <img src="{{ asset('template/bundles/cdp/images/logo_fino.png') }}" width="120" height="20" alt="Logo FINO">
+        </a>
+
+        <!-- Hamburger menu -->
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <!-- End Hamburger menu -->
+
+        <ul class="menu">
+            <li>
+                <a href="#" title="Histoire & Vision">Votre partenaire</a>
+                <button class="toggle-accordion">
+                    <svg class="icon-chevron">
+                        <use xlink:href="bundles/cdp/images/sprite.svg#icon-chevron"></use>
+                    </svg>
+                </button>
+
+                <ul class="submenu">
+
+                    <li>
+                        <a href="{{ path('a_propos') }}" title="Histoire & Vision">Qui sommes nous ?</a>									</li>
+
+
+
+                </ul>
+            </li>
+            <li>
+                <a href="{{ path('afficheall_gms') }}" title="Nos produits">Nos produits</a>
+            </li>
+            <li>
+                <a href="{{ path('service_gms') }}" title="Nos services">Nos services</a>
+            </li>
+
+            <li>
+                <a href="{{ path('contact') }}" title="Contact">Contact</a>
+            </li>
+
+            {% if (user != null) %}
+                <li>
+                    <a href="#" title="Profile">Profile</a>
+                    <button class="toggle-accordion">
+                        <svg class="icon-chevron">
+                        </svg>
+                    </button>
+
+                    <ul class="submenu">
+
+                        <li>
+                            <a href="{{ path('get_panier_gms') }}" title="Panier">Mon Panier</a>	</li>
+                        <li>
+                            <a href="{{ path('affiche_cmd_gms') }}" title="Commande">Mes Commandes</a>	</li>
+
+                    </ul>
+                </li>
+                <li >
+                    <a href="{{ path('logout') }}" title="déconnexion">Déconnexion</a>
+                </li>
+            {% endif %}
+        </ul>
+
+        <ul class="menu-pictos">
+            <li class="phone" data-content-popin-trigger="call-modal">
+                <svg class="icons">
+                    <use xlink:href="bundles/cdp/images/sprite.svg#icon-tel"></use>
+                </svg>
+            </li>
+        </ul>
+    </div>
+</header>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/lib/ReCaptcha.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/tool/debounce_event.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Recipe.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/search.js') }}"></script>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine.js') }}"></script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine_modal.js') }}"></script>
+
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/selection.js') }}"></script>
+
+<script>
+    "use strict";
+    {
+        const key = "gdpr-agreement-expires";
+        const container = document.getElementById("gdpr-info-bar");
+
+        if (+localStorage.getItem(key) < Date.now())
+        {
+            container.classList.add("is-visible");
+            container.querySelector("button").addEventListener(
+                "click",
+                function ()
+                {
+                    container.classList.remove("is-visible");
+                    const now = new Date();
+                    const expires = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate(), 0, 0, 0, 0);
+                    localStorage.setItem(key, expires.getTime());
+                }
+            );
+        }
+    }
+</script>
+<script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
+<main class="main page-product-list">
+    <breadcrumb-block>
+        {% block menu %}
+            <div class="wrapper">
+		<span itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+			<a href="{{ path('afficheall_gms') }}" itemprop="url">
+				<span itemprop="title">Retour</span>
+			</a>
+            <svg class="icon-chevron">
+                <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron') }}"></use>
+            </svg>
+		</span>
+                <span>
+			Nos Produits GMS	</span>
+
+            </div>
+        {% endblock %}
+    </breadcrumb-block>
+
+    {% block barre %}
+        <div class="page-top" style="background-image: url({{ asset('uploads/images/pates.png') }})">
+
+
+            <!-- <div class="title-1">Collaboration</div> -->
+            <h1 class="title-1">
+                Nos Produits GMS	</h1>
+        </div>
+    {% endblock %}
+
+    <div class="page-content">
+        {% block body %}
+        {% endblock %}
+        {% block produit %}
+            <div class="wrapper">
+                <ul id="search-tags" class="selected-filters"></ul>
+
+
+                <div class="card-list">
+                    {% for c in chr %}
+
+                        <div class="card--s " data-product="1586">
+                            <div class="card-img" >
+                                <img src="{{ asset('uploads/images/' ~ c.filename) }}" height="500" width="500">
+
+                            </div>
+
+                            <div class="card-content">
+
+                                <div class="card-main">
+                                    <div class="card-ref">
+                                        Réf. {{ c.reference }}			</div>
+
+                                    <div class="card-title">
+                                        <a href="{{ path('affiche_gms', { 'id': c.id}) }}">{{ c.libelle }}</a>
+                                    </div>
+                                </div>
+
+                                <div class="card-footer">
+
+                                    <div class="card-tags">
+
+
+
+                                        <div class="tag"  data-tooltip-content="Cuit surgelé" style="background-color: #c22c25">
+
+                                        </div>
+
+
+
+
+
+                                        <div class="tag" data-tooltip-content="Décongélation">
+                                            <img src="{{ asset('template/bundles/cdp/images/implementation_step/decongelation.svg') }}" alt="Décongélation" />
+                                        </div>
+
+
+                                    </div>
+
+                                    {% for p in promo %}
+                                        {% if p.produitgms.id == c.id %}
+                                            <button class="card-fav " data-reference="18463">
+                                                <!-- État actif -->
+                                                <img src="{{ asset('images/promo.png') }}" height="80" width="80">
+                                            </button>
+                                        {% endif %}
+                                    {% endfor %}
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endfor %}
+
+                </div>
+
+                <div class="more-content">
+                </div>
+
+            </div>
+
+        {% endblock %}
+
+        </div>
+
+
+
+</main>
+
+<footer class="footer">
+    <div class="footer-top">
+        <div class="wrapper">
+            <div class="siteinfo-contact">
+
+                    <img class="logo" alt="Logo FINO" title="Logo FINO" src="{{ asset('template/bundles/cdp/images/logos/logo_fino.png') }}">
+
+            </div>
+
+            <div class="siteinfo-links">
+                <ul class="links-columns">
+                    <li class="link-label-full no-link">
+                        Votre partenaire					</li>
+
+                    <li class="link-field">
+                        <a href="{{ path('a_propos') }}" title="Histoire & Vision">Qui sommes nous ?</a>													<a href="content/engagements.html" title="Engagements">Engagements</a>													<a href="content/demarche.html" title="Démarche qualité">Démarche qualité</a>													<a href="content/innovation.html" title="Innovation">Innovation</a>													<a href="content/proximite.html" title="Proche de vous">Proche de vous</a>													<a href="collaborations.html" title="Collaborations">Collaborations</a>											</li>
+                </ul>
+
+                <ul class="links-columns">
+                    <li class="link-label">
+                        <a href="{{ path('afficheall_gms') }}" title="Nos produits">Nos produits</a>						</li>
+                    <li class="link-label">
+                        <a href="{{ path('service_gms') }}" title="Nos services">Nos services</a>						</li>
+
+
+                </ul>
+
+                <ul class="links-columns">
+
+                    <li class="link-label">
+                        <a href="{{ path('contact') }}" title="Contactez-nous">Contactez-nous</a>						</li>
+
+                </ul>
+
+                <div class="social">
+                    <span class="join-us">Nous rejoindre sur les réseaux :</span>
+                    <div class="social-links">
+
+
+                        <a href="#" title="Facebook"><img alt="" title="" src="{{ asset('template/coup-de-pates/Documents/coup-de-pates/icon-fb.png') }}" /></a>
+
+
+                        <a href="#" title="Instagram"><img alt="" title="" src="{{ asset('template/coup-de-pates/Documents/coup-de-pates/icon-instagram.png') }}" /></a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <back-totop class="js-back-to-top">
+        <svg class="icon-arrow">
+            <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-arrow') }}"></use>
+        </svg>
+    </back-totop>
+
+
+</footer>
+
+
+<script>
+    /* Accordion footer Responsive */
+    "use strict";
+    {
+        const acc = document.getElementsByClassName("link-label-full");
+        let i = 0;
+
+        for (; i < acc.length; ++i)
+        {
+            acc[i].addEventListener(
+                "click",
+                function ()
+                {
+                    this.classList.toggle("active");
+                    const panel = this.nextElementSibling;
+                    if (panel.style.maxHeight)
+                    {
+                        panel.style.maxHeight = null;
+                    }
+                    else
+                    {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    }
+                }
+            );
+        }
+    }
+</script>
+<script defer src="{{ asset('template/senzo-core/web-app/require8dc4?bundle=CDPBundle&amp;items=app/script,header-modal-contact,product-listing') }}"></script>	</body>
+
+<!-- Mirrored from www.coupdepates.fr/liste-produits by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:07:26 GMT -->
+</html>

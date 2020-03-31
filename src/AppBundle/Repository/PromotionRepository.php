@@ -10,4 +10,17 @@ namespace AppBundle\Repository;
  */
 class PromotionRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function byGMS(){
+        $query = $this::createQueryBuilder('p')
+            ->where('p.produitgms is not null')
+            ->getQuery();
+        return $query->getResult();
+    }
+
+    public function byCHR(){
+        $query = $this::createQueryBuilder('p')
+            ->where('p.produitchr is not null')
+            ->getQuery();
+        return $query->getResult();
+    }
 }

@@ -1,24 +1,45 @@
 # To get started with security, check out the documentation:
 # https://symfony.com/doc/current/security.html
 security:
+  encoders:
+    Symfony\Component\Security\Core\User\User: plaintext
+    AppBundle\Entity\User: plaintext
+    AppBundle\Entity\UserParticculier:
+      algorithm: bcrypt
+      cost:      15
 
-    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
-    providers:
-        in_memory:
-            memory: ~
+  role_hierarchy:
+      ROLE_CHR: ROLE_USER
+      ROLE_GMS: ROLE_USER
+      ROLE_ADMIN: ROLE_ADMIN
 
-    firewalls:
-        # disables authentication for assets and the profiler, adapt it according to your needs
-        dev:
-            pattern: ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+  providers:
+      in_memory:
+        memory:
+          users:
+            user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+            admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+      main:
+        entity:
+          class:    AppBundle\Entity\User
+          property: username
+      main1:
+        entity:
+          class: AppBundle\Entity\UserParticulier
 
-        main:
-            anonymous: ~
-            # activate different ways to authenticate
+      chain_provider:
+          chain:
+            providers: [main, main1]
 
-            # https://symfony.com/doc/current/security.html#a-configuring-how-your-users-will-authenticate
-            #http_basic: ~
+  firewalls:
+      dev:
+        pattern: ^/(_(profiler|wdt)|css|images|js)/
+        security: false
 
-            # https://symfony.com/doc/current/security/form_login_setup.html
-            #form_login: ~
+
+  access_control:
+    - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
+    - { path: /register, roles: IS_AUTHENTICATED_ANONYMOUSLY}
+    - { path: /register_part, roles: IS_AUTHENTICATED_ANONYMOUSLY}
+
+

@@ -1,42 +1,157 @@
-<table>
-    <thead>
-    <tr>
-        <th>Libelle</th>
-        <th>Description</th>
-        <th>Image</th>
-    </tr>
-    </thead>
-    <tbody>
+{% extends 'baseMenu.html.twig' %}
+{% block stylesheet %}
+<style>
+    #banner {
+        height: 90px;
+        width:800px;
+        background-color: #333;
+        border-radius: 15px;
+        position: relative;
+        /*opacity: 0;*/
+        font: 0.9em Verdana, Helvetica, sans-serif;
+        color: white;
+        /*overflow: hidden;*/
+    }
+    .slideshow {
+
+        width: 1300px;
+
+        height: 50px;
+
+        overflow: hidden;
+
+        border: 3px solid #F2F2F2;
+
+        margin-left: 20px;
+
+    }
+
+    .slideshow ul {
+
+        /* 4 images donc 4 x 100% */
+
+        width: 1300%;
+
+        height: 50px;
+
+        padding:0; margin:0;
+
+        list-style: none;
+
+    }
+
+    .slideshow li {
+
+        float: left;
+        text-align: center;
+
+    }
+    h3 {
+        color: #E51406;
+        font-style: italic;
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block banner %}
+{% if promo != null %}
+        <div class="slideshow" id="slideshow">
+
+            <ul>
+{% for p in promo %}
+                <li>
+                    <h3 style="width: 1300px; height: 50px;margin-top: 5px">Découvrez nos promos: {{ p.pourcentage }}% sur notre {{ p.produitgms.libelle }}  </h3>
+                </li>
+               {% endfor %}
+            </ul>
+        </div>
+    {% else %}
+
+            <ul>
+                    <li>
+                        <h3 style="width: 1300px; height: 50px;margin-top: 5px;text-align: center;">Frais de livraison 10 DT / Gratuits à partir de 50 DT d'achats  </h3>
+                    </li>
+            </ul>
+
+{% endif %}
+{% endblock %}
+
+{% block menu %}
+    {% if (user != null) %}
+        <li>
+            <a href="#" title="Profile">Profile</a>
+            <button class="toggle-accordion">
+                <svg class="icon-chevron">
+                </svg>
+            </button>
+
+            <ul class="submenu">
+
+                <li>
+                    <a href="{{ path('get_panier_gms') }}" title="Panier">Mon Panier</a>	</li>
+                <li>
+                    <a href="{{ path('affiche_cmd_gms') }}" title="Commande">Mes Commandes</a>	</li>
+
+            </ul>
+        </li>
+    <li >
+        <a href="{{ path('logout') }}" title="déconnexion">Déconnexion</a>
+    </li>
+    {% endif %}
+{% endblock %}
+{% block body %}
     {% for g in gms %}
-        <tr>
-            <td>{{ g.libelle }}</td>
-            <td>{{ g.description }}</td>
-            <td><img src={{ asset('uploads/images/' ~ g.filename) }} width="100" height="100"></td>
-            <td><a href={{ path('affiche_gms', { 'id': g.id}) }}>Détails</a></td>
-            <td><a href={{ path('modifier_gms', { 'id': g.id}) }}>Modifier</a></td>
-            <div class="modal fade" id="infos">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">x</button>
-                            <h4 class="modal-title">Confirmation</h4>
+        <div class="swiper-slide">
+            <div class="card--l" data-product="18463">
+                <div class="card-img">
+                    <img src="{{ asset('uploads/images/' ~ g.filename) }}" class="center"  style="padding-top:5px">
+                </div>
+
+                <div class="card-content">
+                    <div class="card-main">
+                        <div class="card-ref">
+                            Réf. {{ g.reference }}								</div>
+
+                        <h2 class="card-title"><a href="{{ path('affiche_gms', { 'id': g.id}) }}">{{ g.libelle }}</a></h2>
+                    </div>
+
+                    <div class="card-footer">
+                        <div class="card-tags">
+
+
+
+                            <div class="tag" data-tooltip-content="Précuit surgelé" style="background-color: #f5be4d"></div>
+
+
+
+
+
+                            <div class="tag" data-tooltip-content="Décongélation">
+                                <svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" width="9.97mm" height="9.97mm" viewBox="0 0 28.26 28.26"><title>Decongelation2</title><path d="M28.26,14.13A14.13,14.13,0,1,1,14.13,0,14.12,14.12,0,0,1,28.26,14.13Z" style="fill:#bfbfbf"/><path d="M20.76,13.72s-4.12,6.78,0,6.78,0-6.78,0-6.78" style="fill:#bee4f9"/><path d="M20.76,21a2.15,2.15,0,0,1-2-1c-1.1-2,1.33-6.07,1.61-6.54l.43-.69.41.69c.29.47,2.71,4.58,1.62,6.54a2.14,2.14,0,0,1-2,1m0-6.27c-.85,1.6-1.7,3.85-1.18,4.79.07.12.28.49,1.18.49s1.1-.37,1.17-.49c.53-.95-.33-3.19-1.17-4.79" style="fill:#3a2050"/><path d="M14.11,13.28S7.26,24.7,14.26,24.7s-.15-11.42-.15-11.42" style="fill:#bee4f9"/><path d="M14.26,25.19a3.34,3.34,0,0,1-3.19-1.54C9.27,20.46,13.5,13.33,13.69,13l.41-.68.43.68c.19.3,4.63,7.46,2.88,10.65a3.28,3.28,0,0,1-3.15,1.52m-.14-10.93c-1.27,2.32-3.32,6.91-2.19,8.91a2.42,2.42,0,0,0,2.33,1,2.37,2.37,0,0,0,2.29-1c1.1-2-1.09-6.61-2.43-8.94" style="fill:#3a2050"/><path d="M7.35,13.87S3.7,20.5,7.51,20.5s-.16-6.63-.16-6.63" style="fill:#bee4f9"/><path d="M7.51,21a2,2,0,0,1-1.9-.94c-1.12-1.89,1.06-6,1.32-6.43l.41-.75.44.74c.28.46,2.66,4.57,1.6,6.45A2,2,0,0,1,7.51,21m-.14-6.08c-.74,1.58-1.45,3.74-.92,4.64.07.11.27.45,1.06.45s1-.32,1-.43c.5-.88-.32-3.07-1.15-4.66" style="fill:#3a2050"/><path d="M24.59,12.79H3.67a.6.6,0,0,1,0-1.2H24.59a.6.6,0,1,1,0,1.2" style="fill:#3a2050"/><path d="M7.77,12.53a.61.61,0,0,1-.51-.28L5.35,9.42a.62.62,0,0,1,1-.69l1.9,2.83a.63.63,0,0,1-.17.86.6.6,0,0,1-.34.11" style="fill:#3a2050"/><path d="M14.06,12.67h0a.65.65,0,0,1-.52-.3l-5-8.22a.61.61,0,0,1,1-.64l4.46,7.38L19,3.36a.61.61,0,0,1,.85-.19A.63.63,0,0,1,20,4l-5.42,8.36a.61.61,0,0,1-.51.28" style="fill:#3a2050"/><path d="M21.38,8h-.05l-4.24-.28a.6.6,0,0,1-.51-.35L15,4a.63.63,0,0,1,.3-.83.62.62,0,0,1,.82.3L17.53,6.5l3.88.26a.62.62,0,0,1,0,1.23" style="fill:#3a2050"/><path d="M7.18,8.13a.61.61,0,0,1-.61-.59.62.62,0,0,1,.59-.64l3.6-.13L12.5,3.54a.61.61,0,0,1,.83-.25.62.62,0,0,1,.25.84L11.67,7.67a.62.62,0,0,1-.52.32L7.2,8.13h0" style="fill:#3a2050"/><path d="M20.35,12.67a.66.66,0,0,1-.35-.11.63.63,0,0,1-.16-.86l1.91-2.83a.6.6,0,0,1,.85-.17.63.63,0,0,1,.17.86l-1.91,2.83a.61.61,0,0,1-.51.28" style="fill:#3a2050"/><path d="M14.81,19.23s-2.09,4.08.28,3.91-.28-3.91-.28-3.91" style="fill:#fff"/></svg>									</div>
+
+
+
+                            <div class="tag" data-tooltip-content="Passage au four">
+                                <svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" width="9.96mm" height="9.96mm" viewBox="0 0 28.24 28.24"><title>PasserFour2</title><path d="M28.32,14.29A14.12,14.12,0,1,1,14.2.17,14.12,14.12,0,0,1,28.32,14.29Z" transform="translate(-0.08 -0.17)" style="fill:#bfbfbf"/><rect x="5.51" y="6.06" width="17.22" height="16.12" style="fill:#fff"/><path d="M23.11,22.65H5.29V5.93H23.11Zm-17.22-.6H22.51V6.53H5.89Z" transform="translate(-0.08 -0.17)" style="fill:#3a2050"/><path d="M10.92,9.81a1.13,1.13,0,0,1,0-2.26,1.13,1.13,0,1,1,0,2.26Zm0-1.64a.51.51,0,1,0,.51.51A.51.51,0,0,0,10.92,8.17Z" transform="translate(-0.08 -0.17)" style="fill:#bfbfbf"/><path d="M8.39,9.81A1.13,1.13,0,1,1,9.53,8.68,1.14,1.14,0,0,1,8.39,9.81Zm0-1.64a.51.51,0,1,0,.51.51A.51.51,0,0,0,8.39,8.17Z" transform="translate(-0.08 -0.17)" style="fill:#bfbfbf"/><path d="M13.45,9.81a1.13,1.13,0,1,1,1.13-1.13A1.14,1.14,0,0,1,13.45,9.81Zm0-1.64a.51.51,0,0,0,0,1,.51.51,0,1,0,0-1Z" transform="translate(-0.08 -0.17)" style="fill:#bfbfbf"/><rect x="7.25" y="10.16" width="13.87" height="0.37" style="fill:#3a2050"/><path d="M21.1,18a2.2,2.2,0,0,1-2,2.37H9.42a2.2,2.2,0,0,1-2-2.37V14.6a2.21,2.21,0,0,1,2-2.38h9.69a2.21,2.21,0,0,1,2,2.38Z" transform="translate(-0.08 -0.17)" style="fill:#fff"/><path d="M19.11,20.76H9.42A2.55,2.55,0,0,1,7.09,18V14.6a2.56,2.56,0,0,1,2.33-2.73h9.69a2.56,2.56,0,0,1,2.34,2.73V18A2.55,2.55,0,0,1,19.11,20.76Zm-9.69-8.2a1.88,1.88,0,0,0-1.65,2V18a1.87,1.87,0,0,0,1.65,2h9.69a1.87,1.87,0,0,0,1.65-2V14.6a1.88,1.88,0,0,0-1.65-2Z" transform="translate(-0.08 -0.17)" style="fill:#3a2050"/><rect x="7.08" y="14.31" width="13.87" height="0.37" style="fill:#3a2050"/><rect x="7.08" y="17.44" width="13.87" height="0.37" style="fill:#3a2050"/></svg>									</div>
+
+
                         </div>
-                        <div class="modal-body">
-                            Etes-vous sur de vouloir supprimer cet article !
-                        </div>
-                        <div class="modal-footer">
-                            <button href="{{ path('supprimer_gms', {'id': g.id}) }}" class="btn btn-info" data-dismiss="modal">OUI</button>
-                            <button class="btn btn-info" data-dismiss="modal">NON</button>
-                        </div>
+                        {% for p in promo %}
+                            {% if p.produitgms.id == g.id %}
+                        <button class="card-fav " data-reference="18463">
+                            <!-- État actif -->
+                           <img src="{{ asset('images/promo.png') }}" height="80" width="80">
+                        </button>
+                            {% endif %}
+                            {% endfor %}
                     </div>
                 </div>
             </div>
-            <td><a onclick="myFunction()">Supprimer</a></td>
-        </tr>
+        </div>
     {% endfor %}
-    </tbody>
-</table>
-
+{% endblock %}
+{% block script %}
 <script type="application/javascript">
     function myFunction() {
         var txt;
@@ -46,3 +161,23 @@
         }
     }
 </script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+
+        $(function(){
+
+            setInterval(function(){
+
+                $(".slideshow ul").animate({marginLeft:-350},800,function(){
+
+                    $(this).css({marginLeft:0}).find("li:last").after($(this).find("li:first"));
+
+                })
+
+            }, 3500);
+
+        });
+
+    </script>
+{% endblock %}

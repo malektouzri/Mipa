@@ -1,0 +1,55 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+
+    <div class="col-lg-4 col-md-6">
+        <aside class="profile-nav alt">
+            <section class="card">
+                <div class="card-header user-header alt bg-dark">
+                    <div class="media">
+
+                        <div class="media-body">
+                            <h2 class="text-light display-6"> {{ user.idUser.prenom }} {{ user.idUser.nom }}</h2>
+                            <p>{{ user.idUser.telephone }} </p>
+                            <p>{{ user.idUser.adresse }}</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <ul class="list-group list-group-flush">
+                    {% for c in cmd %}
+                    <li class="list-group-item">
+                        <strong>{{ c.quantite  }}</strong> {{ c.idProduit.libelle}} ({{ c.quantite }}*{{ c.idProduit.prix }}) à {{ c.idProduit.prix * c.quantite }} DT                 </li>
+                    {% endfor %}
+
+                    <li class="list-group-item">
+                        <strong>Date: </strong> {{ user.date|date('d-m-Y') }}                    </li>
+                    {% if total < 50 %}
+                    <li class="list-group-item">
+                        <strong>Total: </strong>{{ total }} DT   + 10 DT frais de livraison        </li>
+                    {% else %}
+                    <li class="list-group-item">
+                        <strong>Total: </strong>{{ total }} DT                 </li>
+                    {% endif %}
+                    <li class="list-group-item">
+                        <a onclick="return accepter()" href="{{ path('acceptercmdgms', {'id':user.id}) }}">Accepter</a>             </li>
+
+                    <li class="list-group-item">
+                        <a onclick="return refuser()" href="{{ path('affichecmdgmsattente') }}">Refuser</a>             </li>
+                </ul>
+
+            </section>
+        </aside>
+    </div>
+    <script>
+        function accepter() {
+            return confirm("Un mail automatique sera envoyé au client pour l'informer");
+
+        }
+        function refuser() {
+            return confirm("Etes-vous sur de vouloir ignorer cette commande?");
+
+        }
+    </script>
+{% endblock %}

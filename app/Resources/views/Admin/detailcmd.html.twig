@@ -1,0 +1,50 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block body %}
+
+    <div class="col-lg-4 col-md-6">
+        <aside class="profile-nav alt">
+            <section class="card">
+                <div class="card-header user-header alt bg-dark">
+                    <div class="media">
+
+                        <div class="media-body">
+                            <h2 class="text-light display-6"> {{ user.idUser.nomEntreprise }}</h2>
+                            <p>{{ user.idUser.prenom }} {{ user.idUser.nom }}</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <ul class="list-group list-group-flush">
+                    {% for c in e %}
+                        <li class="list-group-item">
+                            <strong>{{ c.quantite  }}</strong> {{ c.idProduit.libelle}} ({{ c.quantite }}*{{ c.idProduit.prix }}) à {{ c.idProduit.prix * c.quantite }} DT                 </li>
+                    {% endfor %}
+
+                    <li class="list-group-item">
+                        <strong>Date: </strong> {{ user.date|date('d-m-Y') }}                    </li>
+                    <li class="list-group-item">
+                        <strong>Total: </strong> {{ total }} DT                    </li>
+
+                    <li class="list-group-item">
+                        <a onclick="return accepter()" href="{{ path('acceptercmd', {'id':user.id}) }}">Accepter</a>             </li>
+
+                    <li class="list-group-item">
+                        <a onclick="return refuser()" href="{{ path('affichecmdattente') }}">Refuser</a>             </li>
+                </ul>
+
+            </section>
+        </aside>
+    </div>
+    <script>
+        function accepter() {
+            return confirm("Un mail automatique sera envoyé à l'utilisateur pour confirmer la commande");
+
+        }
+        function refuser() {
+            return confirm("Etes-vous sur de vouloir ignorer cette commande?");
+
+        }
+    </script>
+{% endblock %}
