@@ -16,20 +16,12 @@ security:
   providers:
       in_memory:
         memory:
-          users:
-            user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-            admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+
       main:
         entity:
           class:    AppBundle\Entity\User
           property: username
-      main1:
-        entity:
-          class: AppBundle\Entity\UserParticulier
 
-      chain_provider:
-          chain:
-            providers: [main, main1]
 
   firewalls:
       dev:
