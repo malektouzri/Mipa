@@ -1,0 +1,47 @@
+{
+    "nikic/php-parser": {
+        "version": "v4.3.0"
+    },
+    "php": {
+        "version": "7.1"
+    },
+    "sensio/generator-bundle": {
+        "version": "v3.1.7"
+    },
+    "symfony/flex": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "c0eeb50665f0f77226616b6038a9b06c03752d8e"
+        },
+        "files": [
+            "./.env"
+        ]
+    },
+    "symfony/maker-bundle": {
+        "version": "1.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "1.0",
+            "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
+        }
+    },
+    "symfony/phpunit-bridge": {
+        "version": "3.3",
+        "recipe": {
+            "repo": "github.com/symfony/recipes",
+            "branch": "master",
+            "version": "3.3",
+            "ref": "7e941371431f5245d05c6490ada44c17eb0d27ed"
+        },
+        "files": [
+            "./.env.test",
+            "./bin/phpunit",
+            "./phpunit.xml.dist",
+            "./tests/bootstrap.php"
+        ]
+    }
+}
