@@ -3,5 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/githincs/public_html/
     - /bin/cp -R * $DEPLOYPATH
-    - cd $DEPLOYPATH
-    - php bin/console cache:clear
+    - rm -Rf /home/githincs/public_html/*
