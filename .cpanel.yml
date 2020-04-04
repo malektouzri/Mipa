@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/githincs/public_html/
+    - /bin/cp -R * $DEPLOYPATH
+    - rm -Rf /home/githincs/public_html/var/cache/*
