@@ -1,5 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/githincs/public_html/
+    - export DEPLOYPATH=/home/githincs/public_html/mipa
     - /bin/cp * $DEPLOYPATH
