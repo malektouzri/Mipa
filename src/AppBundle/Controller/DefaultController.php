@@ -24,7 +24,7 @@ class DefaultController extends Controller
      *@Route("/test")
      */
     public function testAction(){
-        return $this->render('TwigBundle:Exception:error404.html.twig');
+        return $this->render('default/test.html.twig');
     }
 
     public function aproposAction(Request $request){
