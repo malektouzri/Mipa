@@ -530,7 +530,7 @@
             {% for c in cmd %}
                 <article class="product">
                     <header>
-                        <a class="confirmModal" onclick="return myDelete()" href="{{ path('supprimer_cmd', {'id':c.id}) }}">
+                        <a onclick="return myDelete()" href="{{ path('supprimer_cmd', {'id':c.id}) }}">
                             <img src="{{ asset('uploads/images/' ~ c.idProduit.filename) }}" alt="">
 
                             <h3 style="text-align: center">Supprimer</h3>
