@@ -19,9 +19,6 @@
         //<!--
         Object.defineProperty(window, "recaptcha_key_public", { value: "6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH" });    //-->
     </script>
-    <script defer="defer" src="../../www.google.com/recaptcha/api9881.js?render=6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH"></script>
-    <script defer="defer" src="../../s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5cd59a0995080cc2"></script><script defer src="../bundles/cdp/js/compiled/model/Geo.js"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16084831-1"></script>
     <script>
 
@@ -51,7 +48,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 <header class="header">
     <div class="header-top">
-        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="../bundles/cdp/images/sprite.svg#icon-change"></use></svg></a>	</div>
+        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-change') }}"></use></svg></a>	</div>
 
     <div class="header-bottom">
         <a href="{{ path('home_page') }}" class="logo">
@@ -115,46 +112,15 @@
         <ul class="menu-pictos">
             <li class="phone" data-content-popin-trigger="call-modal">
                 <svg class="icons">
-                    <use xlink:href="bundles/cdp/images/sprite.svg#icon-tel"></use>
                 </svg>
             </li>
         </ul>
     </div>
 </header>
 
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/lib/ReCaptcha.js')}}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/tool/debounce_event.js')}}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js')}}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Recipe.js')}}"></script>
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/search.js')}}"></script>
-
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine.js') }}"></script>
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine_modal.js') }}"></script>
-
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/selection.js') }}"></script>
-
-<script>
-    "use strict";
-    {
-        const key = "gdpr-agreement-expires";
-        const container = document.getElementById("gdpr-info-bar");
-
-        if (+localStorage.getItem(key) < Date.now())
-        {
-            container.classList.add("is-visible");
-            container.querySelector("button").addEventListener(
-                "click",
-                function ()
-                {
-                    container.classList.remove("is-visible");
-                    const now = new Date();
-                    const expires = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate(), 0, 0, 0, 0);
-                    localStorage.setItem(key, expires.getTime());
-                }
-            );
-        }
-    }
-</script>
 
 <main class="main page-single page-single-recipe">
 
@@ -193,17 +159,7 @@
             </div>
             <div class="addthis is-hidden addthis_inline_share_toolbox"></div>
 
-            <script>
-                "use strict";
-                document.getElementById("toggle_addThis").addEventListener(
-                    "click",
-                    function (event)
-                    {
-                        event.preventDefault();
-                        event.target.closest(".sticky-tools").querySelector(".addthis").classList.toggle("is-hidden");
-                    }
-                );
-            </script>
+
         </div>
 
         <div class="single-visual-slider">
@@ -309,14 +265,14 @@
         <div class="single-section" id="section-5" data-section-title="Produits similaires">
 
             <div class="single-contact-us">
-                Une question sur ce produit ? <a href="{{ path('contact') }}"><strong><a href="" >Contactez-nous</a></strong></a>
+                Une question sur ce produit ? <a><strong><a href=""{{ path('contact') }}"" >Contactez-nous</a></strong></a>
             </div>
         </div>
 
 
     </div>
 </main>
-<script defer src="../senzo-core/web-app/require9823?bundle=CDPBundle&amp;items=app/script,header-modal-contact"></script>	</body>
+<script defer type="text/javascript" src="{{ asset('template/senzo-core/web-app/require9823.js?bundle=CDPBundle&amp;items=app/script,header-modal-contact') }}"></script>	</body>
 
 <!-- Mirrored from www.coupdepates.fr/produit/baguette-solene-a-bouts-pointus-18463 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:20:27 GMT -->
 </html>

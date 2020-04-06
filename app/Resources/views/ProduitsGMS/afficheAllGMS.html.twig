@@ -80,7 +80,7 @@
 {% block menu %}
     {% if (user != null) %}
         <li>
-            <a href="#" title="Profile">Profile</a>
+            <a href="{{ path('profile_gms') }}" title="Profile">Profile</a>
             <button class="toggle-accordion">
                 <svg class="icon-chevron">
                 </svg>
@@ -105,7 +105,7 @@
         <div class="swiper-slide">
             <div class="card--l" >
                 <div class="card-img">
-                    <img src="{{ asset('uploads/images/' ~ g.filename) }}" class="center" height="300" width="300" style="padding-top:5px">
+                    <img src="{{ asset('uploads/images/' ~ g.filename) }}" class="center" height="250" width="250" style="padding-top:5px">
                 </div>
 
                 <div class="card-content">

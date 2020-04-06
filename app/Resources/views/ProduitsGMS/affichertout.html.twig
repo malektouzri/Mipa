@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" />
     <link href={{ asset('template/bundles/cdp/images/logos/logo_fino.png') }} rel="icon" />
-    <link href="{{ asset('template/cache-buster-1570113083/bundles/cdp/css/styles.min.css') }}" media="" rel="stylesheet" type="text/css" /><script defer="defer" src="cache-buster-1556112614/bundles/senzocore/js/lib/polyfills/polyfills.js"></script>
+    <link href="{{ asset('template/cache-buster-1570113083/bundles/cdp/css/styles.min.css') }}" media="" rel="stylesheet" type="text/css" /><script defer="defer" src="{{ asset('template/cache-buster-1556112614/bundles/senzocore/js/lib/polyfills/polyfills.js') }}"></script>
     <script defer="defer" src="{{ asset('template/cache-buster-1561972607/bundles/senzocore/js/lib/polyfills/extensions.js') }}"></script>
     <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/svgxuse.min.js') }}"></script>
     <script defer="defer" src="{{ asset('template/cache-buster-1553600510/bundles/cdp/js/polyfills/css-variables.js') }}"></script>
@@ -18,7 +18,6 @@
         //<!--
         Object.defineProperty(window, "recaptcha_key_public", { value: "6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH" });    //-->
     </script>
-    <script defer="defer" src="../www.google.com/recaptcha/api9881.js?render=6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH"></script><script defer src="bundles/cdp/js/compiled/model/Geo.js"></script>
     {% block stylesheet %}
     {% endblock %}
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16084831-1"></script>
@@ -37,7 +36,7 @@
 
 <header class="header">
     <div class="header-top">
-        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="../bundles/cdp/images/sprite.svg#icon-change"></use></svg></a>	</div>
+        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-change') }}"></use></svg></a>	</div>
 
     <div class="header-bottom">
         <a href="{{ path('home_page') }}" class="logo">
@@ -54,7 +53,7 @@
                 <a href="#" title="Histoire & Vision">Votre partenaire</a>
                 <button class="toggle-accordion">
                     <svg class="icon-chevron">
-                        <use xlink:href="bundles/cdp/images/sprite.svg#icon-chevron"></use>
+                        <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-chevron') }}"></use>
                     </svg>
                 </button>
 
@@ -80,7 +79,7 @@
 
             {% if (user != null) %}
                 <li>
-                    <a href="#" title="Profile">Profile</a>
+                    <a href="{{ path('profile_gms') }}" title="Profile">Profile</a>
                     <button class="toggle-accordion">
                         <svg class="icon-chevron">
                         </svg>
@@ -104,46 +103,16 @@
         <ul class="menu-pictos">
             <li class="phone" data-content-popin-trigger="call-modal">
                 <svg class="icons">
-                    <use xlink:href="bundles/cdp/images/sprite.svg#icon-tel"></use>
                 </svg>
             </li>
         </ul>
     </div>
 </header>
 
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/lib/ReCaptcha.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/tool/debounce_event.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Recipe.js') }}"></script>
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/search.js') }}"></script>
 
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine.js') }}"></script>
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine_modal.js') }}"></script>
-
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/selection.js') }}"></script>
-
-<script>
-    "use strict";
-    {
-        const key = "gdpr-agreement-expires";
-        const container = document.getElementById("gdpr-info-bar");
-
-        if (+localStorage.getItem(key) < Date.now())
-        {
-            container.classList.add("is-visible");
-            container.querySelector("button").addEventListener(
-                "click",
-                function ()
-                {
-                    container.classList.remove("is-visible");
-                    const now = new Date();
-                    const expires = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate(), 0, 0, 0, 0);
-                    localStorage.setItem(key, expires.getTime());
-                }
-            );
-        }
-    }
-</script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
 <main class="main page-product-list">
     <breadcrumb-block>
@@ -314,36 +283,7 @@
 
 </footer>
 
-
-<script>
-    /* Accordion footer Responsive */
-    "use strict";
-    {
-        const acc = document.getElementsByClassName("link-label-full");
-        let i = 0;
-
-        for (; i < acc.length; ++i)
-        {
-            acc[i].addEventListener(
-                "click",
-                function ()
-                {
-                    this.classList.toggle("active");
-                    const panel = this.nextElementSibling;
-                    if (panel.style.maxHeight)
-                    {
-                        panel.style.maxHeight = null;
-                    }
-                    else
-                    {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                }
-            );
-        }
-    }
-</script>
-<script defer src="{{ asset('template/senzo-core/web-app/require8dc4?bundle=CDPBundle&amp;items=app/script,header-modal-contact,product-listing') }}"></script>	</body>
+<script defer type="application/javascript" src="{{ asset('template/senzo-core/web-app/require8dc4.js?bundle=CDPBundle&amp;items=app/script,header-modal-contact,product-listing') }}"></script>	</body>
 
 <!-- Mirrored from www.coupdepates.fr/liste-produits by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:07:26 GMT -->
 </html>

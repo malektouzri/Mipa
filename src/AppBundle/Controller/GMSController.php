@@ -91,9 +91,11 @@ class GMSController extends Controller
         $this->get('session')->getFlashBag()->clear();
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository("AppBundle:User")->find($request->getSession()->get('user')->getId());
+        if($user != null){
+            $ancienUsername = $user->getUsername();
+            $ancienEmail = $user->getEmail();
+        }
 
-        $ancienUsername = $user->getUsername();
-        $ancienEmail = $user->getEmail();
         $regex = '#^0[6-7]{1}\d{8}$#';
         if(isset($_POST['valider'])){
             $usernames = $em->getRepository('AppBundle:User')->findOneBy(array('username'=>$request->get('username')));

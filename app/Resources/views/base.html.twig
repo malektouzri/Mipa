@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr" prefix="og: http://ogp.me/ns#">
 
@@ -22,7 +21,6 @@
         //<!--
         Object.defineProperty(window, "recaptcha_key_public", { value: "6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH" });    //-->
     </script>
-    <script defer="defer" src="../www.google.com/recaptcha/api9881.js?render=6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH"></script><script defer src="bundles/cdp/js/compiled/model/Geo.js"></script>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16084831-1"></script>
     <script>
@@ -76,47 +74,17 @@
         <ul class="menu-pictos">
             <li class="phone" data-content-popin-trigger="call-modal">
                 <svg class="icons">
-                    <use xlink:href="bundles/cdp/images/sprite.svg#icon-tel"></use>
                 </svg>
             </li>
         </ul>
     </div>
 </header>
 
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/lib/ReCaptcha.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/tool/debounce_event.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Recipe.js') }}"></script>
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/search.js') }}"></script>
-
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine.js') }}"></script>
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine_modal.js') }}"></script>
-
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/selection.js') }}"></script>
 
 </div>
-<script>
-    "use strict";
-    {
-        const key = "gdpr-agreement-expires";
-        const container = document.getElementById("gdpr-info-bar");
-
-        if (+localStorage.getItem(key) < Date.now())
-        {
-            container.classList.add("is-visible");
-            container.querySelector("button").addEventListener(
-                "click",
-                function ()
-                {
-                    container.classList.remove("is-visible");
-                    const now = new Date();
-                    const expires = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate(), 0, 0, 0, 0);
-                    localStorage.setItem(key, expires.getTime());
-                }
-            );
-        }
-    }
-</script>
 
 <div class="prehome-wrapper">
     <div class="prehome">
@@ -128,7 +96,7 @@
 
                <button class="prehome__close js-prehome__close">
                    <svg class="icons">
-                       <use xlink:href="bundles/cdp/images/sprite.svg#icon-close"></use>
+                       <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-close') }}"></use>
                    </svg>
                </button>
 
@@ -165,7 +133,7 @@ GMS
 
                <button class="prehome__close js-prehome__close">
                    <svg class="icons">
-                       <use xlink:href="bundles/cdp/images/sprite.svg#icon-close"></use>
+                       <use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-close') }}"></use>
                    </svg>
                </button>
 
