@@ -18,8 +18,6 @@
         //<!--
         Object.defineProperty(window, "recaptcha_key_public", { value: "6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH" });    //-->
     </script>
-    <script defer="defer" src="../www.google.com/recaptcha/api9881.js?render=6Lelx6AUAAAAAK_5SBiXNy41lkBfBLw3nKMp-fNH"></script><script defer src="bundles/cdp/js/compiled/model/Geo.js"></script>
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-16084831-1"></script>
     <script>
 
@@ -111,7 +109,7 @@
 
 <header class="header">
     <div class="header-top">
-        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="../bundles/cdp/images/sprite.svg#icon-change"></use></svg></a>	</div>
+        <a href="{{ path('home_page') }}" title="Je souhaite changer d'univers">Je souhaite changer d'univers<svg class="icons change"><use xlink:href="{{ asset('template/bundles/cdp/images/sprite.svg#icon-change') }}"></use></svg></a>	</div>
 
     <div class="header-bottom">
         <a href="{{ path('home_page') }}" class="logo">
@@ -169,40 +167,9 @@
 
 </header>
 
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/lib/ReCaptcha.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/tool/debounce_event.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Product.js') }}"></script>
 <script defer src="{{ asset('template/bundles/cdp/js/compiled/model/Recipe.js') }}"></script>
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/search.js') }}"></script>
-
-
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine.js') }}"></script>
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/standalone/city_search_engine_modal.js') }}"></script>
-
-<script defer src="{{ asset('template/bundles/cdp/js/compiled/ajax/selection.js') }}"></script>
-
-<script>
-    "use strict";
-    {
-        const key = "gdpr-agreement-expires";
-        const container = document.getElementById("gdpr-info-bar");
-
-        if (+localStorage.getItem(key) < Date.now())
-        {
-            container.classList.add("is-visible");
-            container.querySelector("button").addEventListener(
-                "click",
-                function ()
-                {
-                    container.classList.remove("is-visible");
-                    const now = new Date();
-                    const expires = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate(), 0, 0, 0, 0);
-                    localStorage.setItem(key, expires.getTime());
-                }
-            );
-        }
-    }
-</script>
 
 <main class="main">
     <breadcrumb-block>
@@ -212,7 +179,6 @@
 				<span itemprop="title">Accueil</span>
 			</a>
             <svg class="icon-chevron">
-                <use xlink:href="bundles/cdp/images/sprite.svg#icon-chevron"></use>
             </svg>
 		</span>
             <span>
@@ -359,34 +325,6 @@
 
 </footer>
 
-<script>
-    /* Accordion footer Responsive */
-    "use strict";
-    {
-        const acc = document.getElementsByClassName("link-label-full");
-        let i = 0;
-
-        for (; i < acc.length; ++i)
-        {
-            acc[i].addEventListener(
-                "click",
-                function ()
-                {
-                    this.classList.toggle("active");
-                    const panel = this.nextElementSibling;
-                    if (panel.style.maxHeight)
-                    {
-                        panel.style.maxHeight = null;
-                    }
-                    else
-                    {
-                        panel.style.maxHeight = panel.scrollHeight + "px";
-                    }
-                }
-            );
-        }
-    }
-</script>
 <script defer src="{{ asset('template/senzo-core/web-app/require9823?bundle=CDPBundle&amp;items=app/script,header-modal-contact') }}"></script>	</body>
 {% block script %}
 {% endblock %}

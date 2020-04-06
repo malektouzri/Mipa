@@ -4,6 +4,7 @@
 <!-- Mirrored from www.coupdepates.fr/produit/baguette-solene-a-bouts-pointus-18463 by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 Jan 2020 09:20:24 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+
     <title>{{ gms.libelle }}</title><meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width" />
@@ -32,6 +33,12 @@
         gtag('config', 'UA-16084831-1', {"anonymize_ip":true});
 
     </script>
+
+    <meta property="og:url"           content="{{ path('affiche_gms',{'id':gms.id}) }}" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="MIPA" />
+    <meta property="og:description"   content="Distributeur de produits surgelés" />
+    <meta property="og:image"         content="{{ asset('uploads/images/' ~ gms.filename) }}" />
 </head>
 <body id="senzo_production">
 <div id="fb-root"></div>
@@ -181,7 +188,7 @@
             </button>
 
             <div class="fb-share-button"
-                 data-href="https://mipa.tn/afficheGMS/"{{ gms.id }}
+                 data-href="{{ path('affiche_gms',{'id:'gms.id}) }}"
                  data-layout="button_count">
             </div>
             <div class="addthis is-hidden addthis_inline_share_toolbox"></div>

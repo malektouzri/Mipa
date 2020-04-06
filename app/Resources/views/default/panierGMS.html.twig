@@ -435,8 +435,9 @@
             {% else %}
             <h3 class="shipping">Frais de livraison: <span>0.00</span>DT</h3>
             {% endif %}
-            <h3 class="tax">Adresse Livraison: <span>{{ user.adresse }}</span></h3> <a href="{{ path('profile_gms') }}">Modifier</a>
-            <h3 class="tax">Téléphone: <span>{{ user.telephone }}</span></h3> <a href="{{ path('profile_gms') }}">Modifier</a>
+            <h3 class="tax">Adresse Livraison: <span>{{ user.adresse }}</span></h3>
+            <h3 class="tax">Téléphone: <span>{{ user.telephone }}</span></h3>
+            <a href="{{ path('profile_gms') }}">Modifier</a>
         </div>
 
         <div class="right">
