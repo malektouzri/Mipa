@@ -103,9 +103,9 @@
 {% block body %}
     {% for g in gms %}
         <div class="swiper-slide">
-            <div class="card--l" data-product="18463">
+            <div class="card--l" >
                 <div class="card-img">
-                    <img src="{{ asset('uploads/images/' ~ g.filename) }}" class="center"  style="padding-top:5px">
+                    <img src="{{ asset('uploads/images/' ~ g.filename) }}" class="center" height="300" width="300" style="padding-top:5px">
                 </div>
 
                 <div class="card-content">
