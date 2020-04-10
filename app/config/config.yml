@@ -75,4 +75,12 @@ sensio_framework_extra:
    router:
         annotations: false
 
+sonata_seo:
+    page:
+        title: MIPA - Distributeur de Produits Surgelés
+        metas:
+            name:
+                description: Maghreb International des Produits Agro Alimentaires offre une gamme variée de produits surgelés avec un service de livraison à domicile.
+                keywords: produits, surgelés, livraison, tunis, mipa, fino
+
 
