@@ -4,77 +4,101 @@ app:
 home_page:
     path:   /home_page
     defaults:   {   _controller: AppBundle:Default:index    }
+    schemes: [https]
 afficheall_gms:
     path:   /afficheAllGMS
     defaults:   {   _controller: AppBundle:GMS:afficheAllGMS    }
+    schemes: [https]
 affiche_gms:
     path:   /afficheGMS/{id}
     defaults:   {   _controller: AppBundle:GMS:afficheGMS    }
+    schemes: [https]
 supprimer_gms:
     path:   /supprimerGMS/{id}
     defaults:   {   _controller: AppBundle:GMS:supprimerGMS    }
+    schemes: [https]
 affiche_CategoriesCHR:
   path:   /chr/afficheCategoriesCHR
   defaults:   {   _controller: AppBundle:CHR:afficheCategoriesCHR    }
+  schemes: [https]
 affiche_categorie:
     path:   /chr/afficheCategorie/{id}
     defaults:   {   _controller: AppBundle:CHR:afficheCategorie    }
+    schemes: [https]
 affiche_chr:
   path:   /chr/afficheCHR/{id}
   defaults:   {   _controller: AppBundle:CHR:afficheCHR    }
+  schemes: [https]
 add_panier:
   path:   /chr/addPanier/{id}
   defaults:   {   _controller: AppBundle:Cart:addPanier    }
+  schemes: [https]
 get_panier:
   path:   /che/getPanier
   defaults:   {   _controller: AppBundle:Cart:getPanier    }
+  schemes: [https]
 remove_item:
   path:   /chr/removeItem/{id}
   defaults:   {   _controller: AppBundle:Cart:removeItem    }
+  schemes: [https]
 add_panier_gms:
   path:   /gms/addPanier/{id}
   defaults:   {   _controller: AppBundle:Cart:addPanierGMS    }
+  schemes: [https]
 get_panier_gms:
   path:   /gms/getPanier
   defaults:   {   _controller: AppBundle:Cart:getPanierGMS    }
+  schemes: [https]
 remove_item_gms:
   path:   /gms/removeItem/{id}
   defaults:   {   _controller: AppBundle:Cart:removeItemGMS    }
+  schemes: [https]
 
 
 a_propos:
   path: /apropos
   defaults:   {   _controller:  AppBundle:Default:apropos }
+  schemes: [https]
 contact:
   path: /chr/contact
   defaults:   {   _controller:  AppBundle:Default:contact }
+  schemes: [https]
 contact_gms:
   path: /gms/contact
   defaults:   {   _controller:  AppBundle:Default:contact }
+  schemes: [https]
 service_gms:
   path: /gms/serviceGMS
   defaults:   {   _controller:  AppBundle:GMS:serviceGMS }
+  schemes: [https]
 service_chr:
   path: /chr/serviceCHR
   defaults:   {   _controller:  AppBundle:CHR:serviceCHR }
+  schemes: [https]
 cmd_chr:
   path: /chr/cmdCHR
   defaults:   {   _controller:  AppBundle:Commande:checkoutCHR }
+  schemes: [https]
 affiche_cmd:
   path: /chr/afficheCmd
   defaults:   {   _controller:  AppBundle:Commande:afficheCmd }
+  schemes: [https]
 supprimer_cmd:
   path: /chr/supprimerCmd/{id}
   defaults:   {   _controller:  AppBundle:Commande:supprimerCmd }
+  schemes: [https]
 cmd_gms:
   path: /gms/cmdGMS
   defaults:   {   _controller:  AppBundle:Commande:checkoutGMS }
+  schemes: [https]
 affiche_cmd_gms:
   path: /gms/afficheCmdGMS
   defaults:   {   _controller:  AppBundle:Commande:afficheCmdGMS }
+  schemes: [https]
 supprimer_cmd_gms:
   path: /gms/supprimerCmdGMS/{id}
   defaults:   {   _controller:  AppBundle:Commande:supprimerCmdGMS }
+  schemes: [https]
 
 
 
